@@ -1,0 +1,181 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { siteConfig } from '../data/siteConfig';
+
+const { legal, contact, location, supervisors } = siteConfig;
+---
+
+<LegalLayout
+  title="Termos de Uso — INSPEM"
+  description="Condições de uso do site do INSPEM: finalidade informativa, limites do conteúdo, propriedade intelectual e canais de contato."
+  eyebrow="Documento institucional"
+  heading="Termos de Uso"
+  updatedAt={legal.updatedAt}
+  version={legal.version}
+>
+
+  <h2 id="objeto">1. Objeto</h2>
+
+  <p>
+    Estes Termos regulam o uso do site do INSPEM. Ao navegar por ele, você concorda com as condições abaixo.
+    Se não concordar, pedimos que não utilize o site.
+  </p>
+
+  <p>
+    O site é <strong>institucional e informativo</strong>: apresenta a clínica, as profissionais, a abordagem
+    de trabalho e os canais de contato. Ele não oferece cadastro, área restrita, venda de produtos ou
+    serviços on-line.
+  </p>
+
+  <h2 id="responsavel">2. Quem mantém este site</h2>
+
+  <p>
+    <strong>{legal.companyName}</strong>, que atua sob o nome <strong>INSPEM — Instituto Perceptio de
+    Psicologia Empírica</strong><br />
+    CNPJ {legal.cnpj} · {legal.crpClinic}<br />
+    {location.address} — Sala 1610 · {location.neighborhood} · {location.cep}
+  </p>
+
+  <p>
+    Atendimentos prestados por {supervisors.map((sup, i) => (
+      <>{i > 0 ? ' e ' : ''}<strong>{sup.fullName}</strong> ({sup.crp})</>
+    ))}.
+  </p>
+
+  <h2 id="nao-atendimento">3. O site não é canal de atendimento psicológico</h2>
+
+  <p>
+    O conteúdo publicado aqui tem finalidade informativa e <strong>não constitui atendimento psicológico,
+    avaliação, diagnóstico, orientação clínica ou indicação terapêutica</strong>. Nenhuma informação deste
+    site substitui uma consulta.
+  </p>
+
+  <p>
+    O atendimento no INSPEM é prestado <strong>exclusivamente de forma presencial</strong>, em consultório,
+    mediante agendamento. Não realizamos atendimento por videochamada, telefone, e-mail, WhatsApp ou qualquer
+    outro meio remoto.
+  </p>
+
+  <p>
+    Os canais de contato do site servem para pedir informações, passar pela conversa de triagem e marcar
+    horário. <strong>Não são monitorados de forma contínua e não atendem situações de urgência.</strong>
+  </p>
+
+  <p>
+    A triagem é uma conversa preliminar em que avaliamos a demanda e a adequação ao trabalho da clínica — ela
+    não é sessão, não produz diagnóstico e pode terminar em encaminhamento a outro serviço. O tratamento dos
+    dados dessa etapa está descrito na
+    {' '}<a href="/politica-de-privacidade#dados">seção 3.3 da Política de Privacidade</a>.
+  </p>
+
+  <div class="legal-note">
+    <p><strong>Se você precisa de ajuda agora</strong></p>
+    <p>Em situação de urgência ou risco à vida, procure atendimento imediato:</p>
+    <p>
+      <strong>SAMU — 192</strong> · <strong>Bombeiros — 193</strong> ·
+      <strong> CVV — 188</strong> (apoio emocional, 24 horas, ligação gratuita), também em
+      {' '}<a href="https://www.cvv.org.br" target="_blank" rel="noopener noreferrer">cvv.org.br</a><br />
+      Procure ainda o <strong>CAPS</strong> do seu município ou a emergência hospitalar mais próxima.
+    </p>
+  </div>
+
+  <h2 id="uso">4. Uso permitido</h2>
+
+  <p>
+    Você pode acessar, ler e compartilhar o conteúdo do site para fins pessoais e informativos, citando a
+    fonte.
+  </p>
+
+  <p>Não é permitido:</p>
+
+  <ul>
+    <li>utilizar o site para fins ilícitos ou que violem direitos de terceiros;</li>
+    <li>reproduzir, adaptar ou explorar comercialmente o conteúdo sem autorização prévia e por escrito;</li>
+    <li>tentar obter acesso não autorizado a sistemas, dados ou áreas restritas;</li>
+    <li>
+      realizar coleta automatizada de dados, varreduras ou qualquer ação que comprometa a estabilidade e a
+      segurança do site;
+    </li>
+    <li>inserir código malicioso ou praticar atos que prejudiquem o funcionamento do serviço.</li>
+  </ul>
+
+  <h2 id="propriedade">5. Propriedade intelectual</h2>
+
+  <p>
+    Os textos, a identidade visual, o logotipo, as imagens e a organização do conteúdo deste site pertencem
+    ao INSPEM ou são utilizados mediante licença, e estão protegidos pela Lei nº 9.610/1998.
+  </p>
+
+  <p>
+    A marca <strong>INSPEM</strong> e o nome <strong>Instituto Perceptio de Psicologia Empírica</strong> não
+    podem ser utilizados sem autorização expressa.
+  </p>
+
+  <h2 id="links">6. Links para sites de terceiros</h2>
+
+  <p>
+    O site pode conter links para páginas externas — o aplicativo WhatsApp, mapas, redes sociais e conteúdos
+    de referência. Esses ambientes têm termos e políticas próprias, sobre os quais o INSPEM não tem controle.
+    O acesso a eles é de responsabilidade do usuário.
+  </p>
+
+  <h2 id="responsabilidade">7. Disponibilidade e limitação de responsabilidade</h2>
+
+  <p>
+    Trabalhamos para manter o site disponível e com informações corretas e atualizadas, mas não garantimos
+    funcionamento ininterrupto: podem ocorrer interrupções para manutenção, falhas técnicas ou eventos fora
+    do nosso controle.
+  </p>
+
+  <p>
+    O INSPEM não se responsabiliza por decisões tomadas exclusivamente a partir do conteúdo informativo do
+    site, nem por danos decorrentes de indisponibilidade temporária, de falhas na conexão do usuário ou do
+    uso de serviços de terceiros acessados por links externos.
+  </p>
+
+  <p>
+    Nada nestes Termos afasta as responsabilidades que a legislação atribui de forma inafastável, em especial
+    as do Código de Defesa do Consumidor e as decorrentes da relação profissional entre psicólogo e paciente.
+  </p>
+
+  <h2 id="privacidade">8. Privacidade e proteção de dados</h2>
+
+  <p>
+    O tratamento de dados pessoais relacionados ao site e ao atendimento é descrito na
+    {' '}<a href="/politica-de-privacidade">Política de Privacidade</a>, que integra estes Termos para fins de
+    informação — sem que sua leitura ou aceite seja condição de uso do site.
+  </p>
+
+  <p>
+    O uso de cookies é tratado na
+    {' '}<a href="/politica-de-privacidade#cookies">seção específica da Política de Privacidade</a>.
+  </p>
+
+  <h2 id="alteracoes">9. Alterações destes Termos</h2>
+
+  <p>
+    Podemos atualizar estes Termos a qualquer momento, para refletir mudanças legais ou no funcionamento do
+    site. A data da última atualização consta no topo. O uso do site após a publicação de uma nova versão
+    indica concordância com ela.
+  </p>
+
+  <h2 id="foro">10. Legislação aplicável e foro</h2>
+
+  <p>
+    Estes Termos são regidos pela legislação brasileira, em especial pela Lei nº 12.965/2014 (Marco Civil da
+    Internet), pela Lei nº 8.078/1990 (Código de Defesa do Consumidor) e pela Lei nº 13.709/2018 (LGPD).
+  </p>
+
+  <p>
+    Fica eleito o foro da Comarca de <strong>Porto Alegre/RS</strong> para dirimir eventuais controvérsias,
+    ressalvado ao consumidor o direito de propor ação no foro de seu domicílio.
+  </p>
+
+  <h2 id="contato">11. Contato</h2>
+
+  <p>
+    <strong>{contact.email}</strong> · <strong>{contact.phoneDisplay}</strong><br />
+    {location.address} — Sala 1610 · {location.neighborhood} · {location.cep}
+  </p>
+
+</LegalLayout>

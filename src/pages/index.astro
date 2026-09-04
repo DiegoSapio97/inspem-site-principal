@@ -1,0 +1,117 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Layout from '../layouts/Layout.astro';
+import { contact, services } from '../data/site.mjs';
+---
+
+<Layout>
+  <Header />
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-inner">
+        <p class="eyebrow">Instituto de Psicologia · Porto Alegre</p>
+        <h1 id="page-title">Psicologia baseada em evidências</h1>
+        <p class="hero-copy">
+          Desde 2010, a INSPEM oferece atendimento presencial com decisões clínicas orientadas pelas melhores evidências disponíveis.
+        </p>
+        <a class="text-link" href="#servicos">Conhecer os serviços <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <section class="about-section" id="sobre" aria-labelledby="about-title">
+      <div class="about-inner">
+        <div class="about-copy">
+          <p class="eyebrow">Sobre a INSPEM</p>
+          <h2 id="about-title">Cuidado psicológico com supervisão</h2>
+          <p>
+            A INSPEM oferece psicoterapia e avaliação neuropsicológica presencial em Porto Alegre. O trabalho segue princípios da prática baseada em evidências e conta com supervisão profissional.
+          </p>
+          <p>
+            Cada serviço tem objetivos e etapas próprias. Consulte a página correspondente para entender qual atendimento você procura.
+          </p>
+        </div>
+        <figure>
+          <img
+            src="/assets/equipe-inspem_7eb2d3c6.webp"
+            width="1600"
+            height="1300"
+            alt="Equipe da INSPEM no consultório, no bairro Bom Fim, em Porto Alegre"
+          />
+          <figcaption>Equipe da INSPEM no consultório · Bom Fim, Porto Alegre</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="services-section" id="servicos" aria-labelledby="services-title">
+      <div class="section-inner">
+        <p class="eyebrow">Serviços</p>
+        <h2 id="services-title">Escolha o serviço</h2>
+        <p class="section-lead">
+          Cada opção leva à página específica, com informações sobre o atendimento e como começar.
+        </p>
+
+        <div class="services-grid">
+          {services.map((service) => (
+            <a class="service-card" href={service.href} aria-label={service.linkLabel}>
+              <span class="service-number" aria-hidden="true">{service.number}</span>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+              <span class="card-link">{service.linkLabel} <span aria-hidden="true">→</span></span>
+            </a>
+          ))}
+        </div>
+
+        <aside class="help-card" aria-labelledby="help-title">
+          <div>
+            <h3 id="help-title">Ainda não sabe qual serviço procurar?</h3>
+            <p>
+              Você pode conversar com a equipe para explicar sua dúvida e entender qual página contém as informações mais adequadas para a sua procura.
+            </p>
+          </div>
+          <a class="whatsapp-button" href={contact.whatsappUrl} target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.9L.2 24l6.5-1.7a11.8 11.8 0 0 0 5.4 1.3h.1C18.7 23.6 24 18.3 24 11.8c0-3.1-1.2-6.1-3.5-8.3Zm-8.4 18.1c-1.7 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 1 1 8.4 4.7Zm5.4-7.3c-.3-.1-1.7-.8-2-1-.3-.1-.5-.1-.7.2l-.9 1.1c-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.7-.3-.5.3-.5.8-1.6.1-.2 0-.5 0-.7l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.9 5.2 2.2.9 3 .9 4.1.8.7-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.2-.3-.2-.6-.4Z"/></svg>
+            Tirar uma dúvida pelo WhatsApp
+          </a>
+        </aside>
+      </div>
+    </section>
+
+
+    <section class="approach-section" id="como-trabalhamos" aria-labelledby="approach-title">
+      <div class="section-inner">
+        <p class="eyebrow">Como o cuidado é orientado</p>
+        <h2 id="approach-title">A ciência orienta. A sua história importa.</h2>
+        <div class="approach-grid">
+          <article>
+            <h3>O que é prática baseada em evidências?</h3>
+            <p>A prática baseada em evidências combina três elementos para orientar o cuidado: as melhores pesquisas disponíveis, a experiência clínica do profissional e as características de cada pessoa.</p>
+            <ul>
+              <li><strong>As pesquisas orientam as escolhas.</strong> O profissional considera o que os estudos mostram sobre os cuidados para cada dificuldade.</li>
+              <li><strong>A experiência clínica ajuda a aplicar esse conhecimento.</strong> O psicólogo avalia a situação, acompanha a evolução e ajusta o atendimento quando necessário.</li>
+              <li><strong>Você participa das decisões.</strong> Sua história, sua cultura, seus objetivos e suas preferências fazem parte do planejamento.</li>
+            </ul>
+            <p>Isso não significa aplicar a mesma receita para todos. O cuidado precisa fazer sentido para a sua vida.</p>
+            <a class="source-link" href="https://www.apa.org/practice/guidelines/evidence-based-statement" target="_blank" rel="noopener noreferrer">Referência: American Psychological Association (em inglês)</a>
+          </article>
+          <article>
+            <h3>Como funciona a Terapia Cognitivo-Comportamental (TCC)?</h3>
+            <p>A TCC é uma forma de psicoterapia que ajuda você a entender como seus pensamentos, suas emoções e seus comportamentos se relacionam nas situações do dia a dia.</p>
+            <p>Você e o psicólogo definem objetivos e trabalham juntos para avaliar interpretações, resolver problemas e desenvolver novas formas de agir. A terapia pode incluir atividades combinadas para praticar entre as sessões.</p>
+            <div class="approach-example">
+              <h4>Um exemplo do dia a dia</h4>
+              <p>Antes de uma reunião, você pode pensar que vai errar e sentir vontade de não participar. Na terapia, você pode examinar essa previsão e planejar pequenos passos para lidar com a situação.</p>
+            </div>
+            <p>A proposta não é forçar pensamentos positivos. O trabalho busca interpretações mais realistas e ações que ajudem você a lidar com suas dificuldades.</p>
+            <a class="source-link" href="https://beckinstitute.org/about/understanding-cbt/" target="_blank" rel="noopener noreferrer">Referência: Beck Institute (em inglês)</a>
+          </article>
+        </div>
+        <p class="approach-note">A TCC é uma abordagem de psicoterapia. A prática baseada em evidências é uma forma de orientar decisões clínicas e não se limita a uma única abordagem. A escolha do tratamento depende da avaliação individual; os resultados variam de pessoa para pessoa.</p>
+        <a class="text-link" href="#servicos">Encontrar o serviço que você procura <span aria-hidden="true">↑</span></a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

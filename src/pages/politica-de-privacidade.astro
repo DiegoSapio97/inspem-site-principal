@@ -1,0 +1,485 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { siteConfig } from '../data/siteConfig';
+
+const { legal, contact, location, supervisors } = siteConfig;
+---
+
+<LegalLayout
+  title="Política de Privacidade — INSPEM"
+  description="Como o INSPEM trata dados pessoais no site, no contato, na triagem e no atendimento presencial, conforme a LGPD e o Código de Ética Profissional do Psicólogo."
+  eyebrow="Documento institucional"
+  heading="Política de Privacidade e Proteção de Dados Pessoais"
+  updatedAt={legal.updatedAt}
+  version={legal.version}
+>
+
+  <h2 id="quem-somos">1. Quem somos</h2>
+
+  <p>
+    <strong>{legal.companyName}</strong>, que atua sob o nome <strong>INSPEM — Instituto Perceptio de
+    Psicologia Empírica</strong>, inscrita no CNPJ sob o nº <strong>{legal.cnpj}</strong> e registrada no
+    Conselho Regional de Psicologia sob o nº <strong>{legal.crpClinic}</strong>, com sede na
+    {' '}{location.address} — Sala 1610, {location.neighborhood}, {location.cep}, é a
+    <strong> controladora</strong> dos dados pessoais tratados em razão de suas atividades, nos termos do
+    art. 5º, VI, da Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais — LGPD).
+  </p>
+
+  <p>Os atendimentos psicológicos são prestados por:</p>
+
+  <ul>
+    {supervisors.map(sup => (
+      <li><strong>{sup.fullName}</strong> — {sup.crp}</li>
+    ))}
+  </ul>
+
+  <p>
+    Esta política se aplica a quatro situações distintas, tratadas separadamente porque seguem regras
+    diferentes: a navegação neste site; o contato inicial para informações e agendamento; a
+    <strong> triagem</strong>, conversa preliminar em que avaliamos a demanda e a adequação ao trabalho da
+    clínica; e o atendimento psicológico, prestado <strong>exclusivamente de forma presencial</strong> em
+    nosso consultório.
+  </p>
+
+  <div class="legal-note">
+    <p>
+      <strong>O INSPEM não realiza atendimento psicológico on-line, por videochamada ou por qualquer outro
+      meio remoto.</strong> Nenhum conteúdo de sessão, avaliação ou processo psicoterápico é conduzido,
+      transmitido ou armazenado em plataformas de comunicação à distância.
+    </p>
+  </div>
+
+  <h2 id="compromissos">2. Compromissos que orientam este documento</h2>
+
+  <p>
+    O tratamento de dados pessoais no INSPEM observa os princípios do art. 6º da LGPD — finalidade,
+    adequação, necessidade, livre acesso, qualidade dos dados, transparência, segurança, prevenção, não
+    discriminação e responsabilização.
+  </p>
+
+  <p>
+    Além da LGPD, o atendimento psicológico é protegido pelo <strong>sigilo profissional</strong>, dever
+    previsto nos arts. 9º a 13 do Código de Ética Profissional do Psicólogo (Resolução CFP nº 010/2005). O
+    sigilo é uma camada de proteção <strong>adicional e independente</strong> da LGPD: mesmo situações em que
+    a lei de proteção de dados admitiria um compartilhamento, ele pode ser vedado pelo dever ético do
+    psicólogo.
+  </p>
+
+  <p>
+    Esta política é um <strong>documento informativo</strong>. Ela não depende do seu aceite e não é um
+    contrato — as condições de uso do site estão nos <a href="/termos-de-uso">Termos de Uso</a>, documento
+    separado.
+  </p>
+
+  <h2 id="dados">3. Dados que tratamos, para quê, e com que base legal</h2>
+
+  <h3>3.1 Visitantes do site</h3>
+
+  <div class="legal-table-wrap">
+    <table class="legal-table">
+      <thead>
+        <tr><th>Dado</th><th>Finalidade</th><th>Base legal</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Endereço IP, data e hora do acesso, endereço solicitado, código de resposta, navegador (user agent) e página de origem (referer)</td>
+          <td>Manter o site funcionando, garantir segurança e prevenir abusos</td>
+          <td class="legal-basis">Legítimo interesse — art. 7º, IX</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    A configuração atual de cookies e tecnologias de rastreamento está descrita na
+    <a href="#cookies">seção 5 — Cookies e tecnologias de rastreamento</a>.
+  </p>
+
+  <h3>3.2 Contato inicial</h3>
+
+  <div class="legal-table-wrap">
+    <table class="legal-table">
+      <thead>
+        <tr><th>Dado</th><th>Finalidade</th><th>Base legal</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nome, telefone, e-mail e horários de preferência informados por você ao entrar em contato</td>
+          <td>Responder à sua mensagem, prestar informações sobre os serviços e agendar</td>
+          <td class="legal-basis">Procedimentos preliminares relacionados a contrato, a pedido do titular — art. 7º, V</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>3.3 Triagem</h3>
+
+  <p>
+    Antes de agendar a primeira consulta, realizamos uma <strong>conversa de triagem</strong>, conduzida por
+    uma das psicólogas responsáveis. Nela perguntamos sobre a sua demanda, o que você procura e o contexto
+    que a motivou.
+  </p>
+
+  <p>
+    Essa etapa existe por uma razão clínica e ética: precisamos avaliar a complexidade do caso e se ele tem
+    aderência à abordagem com que trabalhamos. <strong>Quando a demanda pede um método ou um tipo de
+    acompanhamento fora do perfil da clínica, nós o dizemos e recomendamos a procura de outro
+    serviço</strong> — encaminhar é, nesses casos, a conduta correta.
+  </p>
+
+  <div class="legal-table-wrap">
+    <table class="legal-table">
+      <thead>
+        <tr><th>Dado</th><th>Finalidade</th><th>Base legal</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Informações que você relata sobre sua demanda, sintomas, contexto de vida, acompanhamentos anteriores ou em curso</td>
+          <td>Avaliar a demanda, verificar a adequação ao trabalho da clínica e decidir entre agendar ou encaminhar</td>
+          <td class="legal-basis">Tutela da saúde, em procedimento realizado por profissional de saúde — art. 11, II, "f"</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    As informações que você compartilha na triagem são <strong>dados pessoais sensíveis</strong> (art. 5º,
+    II, da LGPD) e estão protegidas pelo sigilo profissional desde a primeira mensagem — inclusive se a
+    conversa não resultar em atendimento.
+  </p>
+
+  <p>
+    <strong>Sobre o canal.</strong> A triagem é feita hoje por WhatsApp. Você não é obrigado a usá-lo: se
+    preferir, pode pedir que a conversa seja feita <strong>por telefone ou presencialmente</strong>, e nós
+    reagendamos sem qualquer prejuízo. Antes de iniciar a triagem, avisamos que a conversa tratará de
+    assuntos clínicos e explicamos os limites do canal, descritos na <a href="#whatsapp">seção 4</a>.
+  </p>
+
+  <p>
+    <strong>Compartilhe apenas o que for necessário.</strong> A triagem não precisa de laudos, exames,
+    relatórios anteriores, prontuários ou histórico detalhado. Se essa documentação for relevante, ela será
+    tratada presencialmente, em sessão.
+  </p>
+
+  <h3>3.4 Pacientes em atendimento</h3>
+
+  <div class="legal-table-wrap">
+    <table class="legal-table">
+      <thead>
+        <tr><th>Dado</th><th>Finalidade</th><th>Base legal</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dados de identificação e contato, e dados relativos à sua saúde: queixa, histórico, evolução do processo, registros e documentos decorrentes do atendimento</td>
+          <td>Prestação do serviço psicológico e manutenção dos registros exigidos pela profissão</td>
+          <td class="legal-basis">Tutela da saúde, em procedimento realizado por profissional de saúde — art. 11, II, "f"</td>
+        </tr>
+        <tr>
+          <td>Nome, CPF e dados de pagamento</td>
+          <td>Emissão de recibos e cumprimento de obrigações fiscais e tributárias</td>
+          <td class="legal-basis">Obrigação legal — art. 7º, II e art. 11, II, "a"</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    Dados relativos à saúde são <strong>dados pessoais sensíveis</strong> (art. 5º, II, da LGPD) e recebem
+    proteção reforçada.
+  </p>
+
+  <div class="legal-note">
+    <p><strong>Por que a base legal não é o consentimento.</strong></p>
+    <p>
+      O tratamento dos registros clínicos se apoia na tutela da saúde por profissional de saúde, e não no
+      seu consentimento. Essa escolha protege você: o consentimento poderia ser revogado a qualquer tempo,
+      mas a Resolução CFP nº 06/2019 obriga o psicólogo a guardar os documentos decorrentes do atendimento
+      por prazo mínimo de cinco anos. Adotar o consentimento como base criaria uma promessa que não
+      poderíamos cumprir.
+    </p>
+    <p>
+      O consentimento livre e esclarecido para o processo psicoterápico continua existindo, é colhido no
+      início do atendimento e trata da sua participação — não da base legal de tratamento de dados.
+    </p>
+  </div>
+
+  <h3>3.5 Crianças e adolescentes</h3>
+
+  <p>
+    Quando o atendimento envolve criança ou adolescente, o tratamento de dados é realizado <strong>no melhor
+    interesse do atendido</strong>, nos termos do art. 14 da LGPD, com a participação de ao menos um dos pais
+    ou do responsável legal, a quem prestamos as informações desta política. Não condicionamos o atendimento
+    ao fornecimento de dados além dos necessários.
+  </p>
+
+  <p>
+    O sigilo do atendido é preservado nos limites dos arts. 9º a 13 do Código de Ética Profissional do
+    Psicólogo: aos responsáveis são comunicadas apenas as informações estritamente necessárias, avaliado o
+    que melhor protege o atendido.
+  </p>
+
+  <h2 id="whatsapp">4. Contato e triagem por WhatsApp</h2>
+
+  <p>
+    O botão de WhatsApp neste site direciona você a uma conversa no aplicativo WhatsApp, operado pela
+    <strong> Meta Platforms, Inc.</strong> É por esse canal que hoje fazemos o contato inicial e a triagem
+    descrita na seção 3.3 — o que significa que assuntos clínicos podem ser tratados ali. Por isso
+    explicamos, com franqueza, o que esse canal protege e o que não protege.
+  </p>
+
+  <p>
+    <strong>O que o canal oferece.</strong> As mensagens do WhatsApp trafegam com criptografia de ponta a
+    ponta: nem a Meta nem terceiros conseguem ler o conteúdo em trânsito. Do nosso lado, o aparelho utilizado
+    é de uso exclusivo da clínica, protegido por bloqueio de tela, e o acesso é restrito às psicólogas
+    responsáveis.
+  </p>
+
+  <p><strong>Quais são os limites.</strong></p>
+
+  <ul>
+    <li>
+      O seu número de telefone e os <strong>metadados</strong> da conversa — com quem você fala, quando e com
+      que frequência — são tratados pela Meta como controladora independente, conforme os termos e a política
+      de privacidade do próprio aplicativo, sobre os quais o INSPEM não tem ingerência. O simples fato de
+      existir uma conversa com uma clínica de psicologia é, em si, uma informação.
+    </li>
+    <li>
+      Há <strong>transferência internacional de dados</strong>, uma vez que a infraestrutura do WhatsApp está
+      localizada fora do Brasil (art. 33 da LGPD).
+    </li>
+    <li>
+      A segurança da conversa depende também <strong>do seu dispositivo</strong>: quem tem acesso ao seu
+      aparelho, se ele tem bloqueio de tela e como estão configurados os seus backups.
+    </li>
+    <li>
+      Um aplicativo de mensagens não oferece o mesmo grau de proteção do consultório. <strong>É por isso que
+      a triagem se limita ao necessário para avaliar a demanda, e o aprofundamento clínico acontece
+      presencialmente.</strong>
+    </li>
+  </ul>
+
+  <p>
+    <strong>Você pode escolher outro canal.</strong> Se preferir não usar o WhatsApp, faremos a triagem por
+    telefone ou presencialmente, sem prejuízo algum ao seu atendimento. Basta pedir. Contato alternativo:
+    <strong> {contact.phoneDisplay}</strong> e <strong>{contact.email}</strong>.
+  </p>
+
+  <p>
+    As conversas são acessíveis apenas às psicólogas responsáveis e eliminadas conforme os prazos da
+    <a href="#retencao">seção 7</a>.
+  </p>
+
+  <h2 id="cookies">5. Cookies e tecnologias de rastreamento</h2>
+
+  <h3>5.1 O que são cookies</h3>
+
+  <p>
+    Cookies são pequenos arquivos gravados no seu navegador quando você visita um site. Servem para lembrar
+    preferências, manter o funcionamento das páginas e, em alguns casos, medir audiência. Tecnologias
+    semelhantes — pixels, tags e identificadores de dispositivo — cumprem funções equivalentes e recebem aqui
+    o mesmo tratamento.
+  </p>
+
+  <h3>5.2 Configuração atual</h3>
+
+  <p>
+    Este site inicial não utiliza Google Analytics, Google Ads, Meta Pixel ou cookies não essenciais.
+  </p>
+
+  <p>
+    Como não há cookies não essenciais para aceitar ou recusar, o site não exibe banner de consentimento nem
+    oferece controle de preferências de cookies. Se essa configuração mudar, esta política será atualizada e
+    os mecanismos exigidos para consentimento e escolha serão implementados antes do início dessas coletas.
+  </p>
+
+  <h2 id="compartilhamento">6. Com quem os dados podem ser compartilhados</h2>
+
+  <p>
+    Não vendemos, alugamos nem cedemos dados pessoais. O compartilhamento ocorre apenas nas seguintes
+    hipóteses:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Prestadores de serviço (operadores)</strong> que atuam sob nossas instruções e com obrigação
+      contratual de confidencialidade e segurança, nas seguintes categorias: hospedagem do site, provedor de
+      e-mail, sistemas de agenda e de registro de atendimentos, e serviços de contabilidade.
+    </li>
+    <li>
+      <strong>Autoridades públicas e judiciais</strong>, quando houver requisição legal ou ordem judicial,
+      observados os limites do sigilo profissional e o dever de buscar o menor prejuízo ao atendido (art. 10
+      do Código de Ética Profissional do Psicólogo).
+    </li>
+    <li>
+      <strong>Terceiros indicados por você</strong>, mediante autorização expressa e específica, como no
+      encaminhamento a outro profissional de saúde.
+    </li>
+  </ul>
+
+  <p>
+    Registros de atendimento psicológico <strong>não são compartilhados para finalidades comerciais,
+    publicitárias ou de análise de audiência</strong> em nenhuma hipótese.
+  </p>
+
+  <p>
+    Você pode solicitar, pelo canal da <a href="#encarregada">seção 9</a>, a relação atualizada dos
+    prestadores de serviço que tratam dados pessoais sob nossas instruções.
+  </p>
+
+  <h3>Transferência internacional</h3>
+
+  <p>
+    Algumas ferramentas que utilizamos armazenam dados fora do Brasil: o <strong>WhatsApp</strong> (Meta
+    Platforms, Inc.) e o provedor de e-mail. Essas transferências observam o art. 33 da LGPD e se limitam a
+    dados de contato e às informações que você escolhe compartilhar durante a triagem pelo WhatsApp.
+  </p>
+
+  <h2 id="retencao">7. Por quanto tempo guardamos os dados</h2>
+
+  <div class="legal-table-wrap">
+    <table class="legal-table">
+      <thead>
+        <tr><th>Categoria</th><th>Prazo</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Documentos e registros decorrentes do atendimento psicológico</td>
+          <td>
+            <strong>Mínimo de 5 anos</strong> a contar do último atendimento, conforme o art. 15 da Resolução
+            CFP nº 06/2019 — prazo que pode ser ampliado por determinação judicial ou necessidade justificada
+          </td>
+        </tr>
+        <tr>
+          <td>Dados fiscais e de pagamento</td>
+          <td>Pelo prazo exigido pela legislação tributária</td>
+        </tr>
+        <tr>
+          <td>Conversa de triagem de quem foi encaminhado a outro serviço</td>
+          <td>
+            O conteúdo da conversa é <strong>eliminado em até 30 dias</strong> após concluído o
+            encaminhamento. Preservamos apenas um registro mínimo do ato profissional — data, identificação e
+            serviço para onde houve encaminhamento — pelo prazo de 5 anos, por exigência da Resolução CFP nº
+            06/2019
+          </td>
+        </tr>
+        <tr>
+          <td>Conversa de triagem de quem se tornou paciente</td>
+          <td>Integra o registro do atendimento e segue o prazo da primeira linha desta tabela</td>
+        </tr>
+        <tr>
+          <td>Contatos de pessoas que apenas pediram informações e não seguiram adiante</td>
+          <td><strong>12 meses</strong> a contar do último contato</td>
+        </tr>
+        <tr>
+          <td>Dados técnicos de navegação</td>
+          <td>Pelo período necessário ao funcionamento e à segurança do site</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Encerrado o prazo, os dados são eliminados ou anonimizados de forma segura.</p>
+
+  <h2 id="direitos">8. Seus direitos</h2>
+
+  <p>
+    Nos termos do art. 18 da LGPD, você pode, a qualquer momento e gratuitamente, solicitar:
+  </p>
+
+  <ul>
+    <li><strong>confirmação</strong> de que tratamos seus dados e <strong>acesso</strong> a eles;</li>
+    <li><strong>correção</strong> de dados incompletos, inexatos ou desatualizados;</li>
+    <li>
+      <strong>anonimização, bloqueio ou eliminação</strong> de dados desnecessários, excessivos ou tratados
+      em desconformidade com a lei;
+    </li>
+    <li><strong>portabilidade</strong> a outro fornecedor de serviço;</li>
+    <li><strong>informação</strong> sobre com quem compartilhamos seus dados;</li>
+    <li><strong>informação</strong> sobre a possibilidade de não consentir e as consequências disso;</li>
+    <li>
+      <strong>revogação do consentimento</strong>, nas hipóteses em que ele é a base legal utilizada.
+    </li>
+  </ul>
+
+  <div class="legal-note">
+    <p><strong>Um limite que precisamos declarar com clareza.</strong></p>
+    <p>
+      O pedido de eliminação <strong>não alcança os registros do atendimento psicológico</strong> durante o
+      período de guarda obrigatória. A LGPD ressalva expressamente a conservação de dados para cumprimento de
+      obrigação legal ou regulatória (art. 16, I), e a Resolução CFP nº 06/2019 impõe essa guarda ao
+      psicólogo. Encerrado o prazo, os registros são eliminados.
+    </p>
+  </div>
+
+  <p>
+    Para exercer seus direitos, escreva para o canal indicado na <a href="#encarregada">seção 9</a>.
+    A confirmação de existência ou o acesso a dados pessoais serão providenciados em formato simplificado,
+    imediatamente, ou por meio de declaração clara e completa, em até 15 dias contados da data do requerimento,
+    conforme o art. 19 da LGPD. Para os demais direitos, serão observados os prazos legais e regulamentares aplicáveis.
+    Poderemos solicitar
+    informações para confirmar sua identidade antes de atender ao pedido — precaução que também protege você.
+  </p>
+
+  <p>
+    Você também pode apresentar reclamação à <strong>Autoridade Nacional de Proteção de Dados (ANPD)</strong>,
+    em <a href="https://www.gov.br/anpd" target="_blank" rel="noopener noreferrer">gov.br/anpd</a>.
+  </p>
+
+  <h2 id="encarregada">9. Encarregada pelo tratamento de dados pessoais</h2>
+
+  <p>
+    <strong>Encarregada:</strong> {legal.dpoName}<br />
+    <strong>Contato:</strong> {contact.email} · {contact.phoneDisplay}
+  </p>
+
+  <p>
+    A encarregada é o canal de comunicação entre você, o INSPEM e a Autoridade Nacional de Proteção de Dados,
+    conforme o art. 41 da LGPD.
+  </p>
+
+  <h2 id="seguranca">10. Segurança da informação</h2>
+
+  <p>
+    Adotamos medidas técnicas e administrativas compatíveis com a natureza sensível dos dados que tratamos,
+    nos termos dos arts. 46 e 47 da LGPD, entre elas:
+  </p>
+
+  <ul>
+    <li>conexão criptografada (HTTPS) em todo o site;</li>
+    <li>controle de acesso individualizado, restrito ao necessário para cada função;</li>
+    <li>autenticação em duas etapas nos sistemas que armazenam dados de pacientes;</li>
+    <li>
+      aparelho de uso exclusivo da clínica para o atendimento por WhatsApp, com bloqueio de tela e acesso
+      restrito às psicólogas responsáveis;
+    </li>
+    <li>guarda de documentos físicos em local trancado, com acesso restrito às psicólogas responsáveis;</li>
+    <li>rotina de backup e de eliminação segura ao fim dos prazos de guarda;</li>
+    <li>orientação e vinculação de toda a equipe ao dever de confidencialidade.</li>
+  </ul>
+
+  <p>
+    Nenhum sistema é infalível. Caso ocorra incidente de segurança que possa acarretar risco ou dano
+    relevante, comunicaremos os titulares afetados e a ANPD <strong>no prazo de 3 (três) dias úteis</strong>
+    contados do conhecimento de que o incidente afetou dados pessoais, na forma da Resolução CD/ANPD nº
+    15/2024, informando a natureza dos dados envolvidos, os riscos, as medidas adotadas e o contato para mais
+    informações.
+  </p>
+
+  <h2 id="alteracoes">11. Alterações desta política</h2>
+
+  <p>
+    Esta política pode ser atualizada para refletir mudanças legais, regulatórias ou em nossos processos. A
+    data da última atualização consta no topo do documento. Alterações relevantes serão comunicadas por aviso
+    no site e, quando cabível, diretamente aos titulares.
+  </p>
+
+  <h2 id="legislacao">12. Legislação aplicável</h2>
+
+  <p>
+    Esta política é regida pela Lei nº 13.709/2018 (LGPD), pela Lei nº 12.965/2014 (Marco Civil da Internet),
+    pela Lei nº 8.078/1990 (Código de Defesa do Consumidor) e pelas normas do Conselho Federal de Psicologia,
+    em especial a Resolução CFP nº 010/2005 (Código de Ética Profissional do Psicólogo) e a Resolução CFP nº
+    06/2019.
+  </p>
+
+</LegalLayout>

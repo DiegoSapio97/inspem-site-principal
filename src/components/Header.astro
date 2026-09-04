@@ -1,0 +1,40 @@
+---
+import { services } from '../data/site.mjs';
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="INSPEM — página inicial">
+      <img
+        src="/assets/logo-inspem-header_a08984b5.webp"
+        width="480"
+        height="120"
+        alt="INSPEM — Instituto Perceptio de Psicologia Empírica"
+      />
+    </a>
+    <details class="header-menu">
+      <summary>Menu <span aria-hidden="true">☰</span></summary>
+      <nav aria-label="Navegação principal">
+        <a href="/#sobre">A clínica</a>
+        {services.map((service) => <a href={service.href}>{service.title}</a>)}
+      </nav>
+    </details>
+  </div>
+</header>
+
+<script>
+  const menu = document.querySelector<HTMLDetailsElement>('.header-menu');
+  const wide = window.matchMedia('(min-width: 1100px)');
+  const syncMenu = () => { if (menu) menu.open = wide.matches; };
+  syncMenu();
+  wide.addEventListener('change', syncMenu);
+  menu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => { if (!wide.matches) menu.open = false; });
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu?.open && !wide.matches) {
+      menu.open = false;
+      menu.querySelector('summary')?.focus();
+    }
+  });
+</script>

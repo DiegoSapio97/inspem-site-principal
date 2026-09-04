@@ -1,0 +1,46 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Layout from './Layout.astro';
+import { siteConfig } from '../data/siteConfig';
+import '../styles/legal.css';
+
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  eyebrow: string;
+  updatedAt: string;
+  version?: string;
+}
+
+const { title, description, heading, eyebrow, updatedAt, version = '1.0' } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <Header />
+
+  <main class="legal">
+    <div class="legal-header">
+      <p class="legal-eyebrow">{eyebrow}</p>
+      <h1>{heading}</h1>
+      <div class="legal-meta">
+        <span>Última atualização: {updatedAt}</span>
+        <span>Versão {version}</span>
+      </div>
+    </div>
+
+    <div class="legal-body"><slot /></div>
+
+    <div class="legal-signature">
+      <strong>{siteConfig.legal.companyName} — INSPEM</strong>
+      CNPJ {siteConfig.legal.cnpj} · CRP-PJ {siteConfig.legal.crpClinic.replace('CRP ', '')}<br />
+      {siteConfig.location.address} — {siteConfig.location.complement} · {siteConfig.location.neighborhood} · {siteConfig.location.cep}<br />
+      {siteConfig.contact.email} · {siteConfig.contact.phoneDisplay}
+    </div>
+
+    <a class="legal-back" href="/">&larr; Voltar ao início</a>
+  </main>
+
+  <Footer />
+</Layout>

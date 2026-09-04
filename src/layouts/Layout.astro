@@ -1,0 +1,32 @@
+---
+import '@fontsource/newsreader/latin-500.css';
+import '@fontsource/newsreader/latin-500-italic.css';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'INSPEM — Serviços de psicologia em Porto Alegre',
+  description = 'Psicoterapia e avaliação neuropsicológica presencial em Porto Alegre, com supervisão e prática baseada em evidências.',
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#111214" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/assets/logo-inspem-header_a08984b5.webp" type="image/webp" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

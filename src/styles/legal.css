@@ -1,0 +1,218 @@
+/* ===== Páginas legais (Política de Privacidade, Termos de Uso) ===== */
+
+.legal {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: clamp(48px, 7vh, 84px) clamp(20px, 5vw, 48px) clamp(64px, 9vh, 110px);
+}
+
+.legal-header {
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 44px;
+}
+
+.legal-eyebrow {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.legal h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(30px, 2.6vw + 18px, 46px);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  text-wrap: balance;
+  margin-bottom: 16px;
+}
+
+.legal-meta {
+  font-size: 13.5px;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+}
+
+.legal-body {
+  color: var(--body);
+  font-size: 16.5px;
+  line-height: 1.7;
+}
+
+.legal-body > * + * {
+  margin-top: 18px;
+}
+
+.legal-body h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(23px, 1.4vw + 16px, 30px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  max-width: 34ch;
+  text-wrap: balance;
+  margin: 56px 0 0;
+  padding-top: 26px;
+  border-top: 1px solid var(--border);
+  scroll-margin-top: 108px;
+}
+
+.legal-body h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.legal-body h3 {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 16.5px;
+  color: var(--text);
+  margin-top: 34px;
+}
+
+.legal-body p {
+  max-width: 68ch;
+}
+
+.legal-body strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.legal-body a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(198, 163, 234, 0.35);
+}
+
+.legal-body a:hover {
+  border-bottom-color: var(--accent);
+}
+
+.legal-body ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 11px;
+  max-width: 68ch;
+}
+
+.legal-body ul li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.legal-body ul li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 11px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-strong);
+}
+
+/* Destaque editorial para as declarações que a clínica assume */
+.legal-note {
+  border-left: 3px solid var(--accent-strong);
+  background: var(--accent-soft);
+  padding: 18px 22px;
+  border-radius: 0 8px 8px 0;
+  font-size: 16px;
+  max-width: 68ch;
+}
+
+.legal-note p + p {
+  margin-top: 10px;
+}
+
+/* Tabelas de finalidade × base legal */
+.legal-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-soft);
+}
+
+.legal-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 620px;
+  font-size: 14.5px;
+}
+
+.legal-table th,
+.legal-table td {
+  text-align: left;
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.legal-table th {
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  background: var(--surface-high);
+}
+
+.legal-table tr:last-child td {
+  border-bottom: none;
+}
+
+.legal-table .legal-basis {
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* Rodapé de identificação da controladora */
+.legal-signature {
+  margin-top: 56px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.legal-signature strong {
+  color: var(--body);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.legal-back {
+  display: inline-block;
+  margin-top: 34px;
+  font-size: 14.5px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.legal-back:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .legal-body h2 {
+    margin-top: 44px;
+    padding-top: 22px;
+  }
+  .legal-table th,
+  .legal-table td {
+    padding: 11px 14px;
+  }
+}

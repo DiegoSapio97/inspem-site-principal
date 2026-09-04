@@ -1,0 +1,46 @@
+---
+import { legal, location, services } from '../data/site.mjs';
+---
+
+<footer class="site-footer" aria-label="Rodapé institucional">
+  <div class="footer-inner">
+    <a class="footer-brand" href="/" aria-label="INSPEM — página inicial">
+      <img
+        src="/assets/logo-inspem-header_a08984b5.webp"
+        width="480"
+        height="120"
+        alt="INSPEM — Instituto Perceptio de Psicologia Empírica"
+      />
+    </a>
+
+    <div class="footer-grid">
+      <div>
+        <h2>Endereço</h2>
+        <address>
+          {location.address} — {location.room}<br />
+          {location.neighborhood}<br />
+          <span>{location.cep}</span>
+        </address>
+      </div>
+
+      <div>
+        <h2>Serviços</h2>
+        <nav class="footer-links" aria-label="Serviços da INSPEM">
+          {services.map((service) => <a href={service.href}>{service.title}</a>)}
+        </nav>
+      </div>
+
+      <div>
+        <h2>Informações institucionais</h2>
+        <p><strong>{legal.companyName}</strong></p>
+        <p class="footer-detail">CNPJ {legal.cnpj}<br />{legal.crpClinic}</p>
+        <nav class="footer-links legal-links" aria-label="Documentos institucionais">
+          <a href="/politica-de-privacidade">Política de Privacidade</a>
+          <a href="/termos-de-uso">Termos de Uso</a>
+        </nav>
+      </div>
+    </div>
+
+    <p class="copyright">© 2026 INSPEM. Todos os direitos reservados.</p>
+  </div>
+</footer>
