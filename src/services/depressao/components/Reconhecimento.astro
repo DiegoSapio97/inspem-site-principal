@@ -1,0 +1,40 @@
+---
+import { siteConfig } from '../data/siteConfig';
+
+const quotes = [
+  { text: "Clínica parceira maravilhosa! Profissionais sérios e comprometidos.", author: "C.T." },
+  { text: "Ótimo atendimento, com muito profissionalismo.", author: "M.P." }
+];
+
+const stars = Array(5).fill(0);
+---
+
+<section id="reconhecimento" class="section">
+  <p class="eyebrow">Reconhecimento</p>
+  <h2>Quem esteve aqui, <em>o que encontrou</em></h2>
+
+  <div class="rating">
+    <span class="r-score">5,0</span>
+    <div>
+      <div class="r-stars" aria-label="5 de 5 estrelas">
+        {stars.map(() => (
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.3l7.1-.7z"/></svg>
+        ))}
+      </div>
+      <p class="r-text">Nota máxima no Google — <a href={siteConfig.contact.googleReviewUrl} target="_blank" rel="noopener">veja você mesmo</a>.</p>
+    </div>
+  </div>
+
+  <div class="quotes">
+    {quotes.map(q => (
+      <blockquote class="quote">
+        <p>{q.text}</p>
+        <footer><b>{q.author}</b> · avaliação publicada no Google</footer>
+      </blockquote>
+    ))}
+  </div>
+
+  <div class="peers">
+    <p>E um reconhecimento que nos orgulha especialmente: <strong>profissionais de saúde da região encaminham seus próprios pacientes à INSPEM</strong> — a confiança de quem conhece o trabalho por dentro.</p>
+  </div>
+</section>

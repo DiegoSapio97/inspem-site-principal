@@ -32,7 +32,7 @@ test('explains evidence-based practice and CBT with institutional references', (
   assert.match(html, /href="https:\/\/beckinstitute.org\/about\/understanding-cbt\/"/);
 });
 
-test('defines the four service destinations', async () => {
+test('defines the five service destinations', async () => {
   assert.ok(existsSync(siteDataUrl), 'src/data/site.mjs must exist');
 
   const { services } = await import(siteDataUrl.href);
@@ -46,6 +46,7 @@ test('defines the four service destinations', async () => {
         title: 'Avaliação neuropsicológica',
         href: '/avaliacao-neuropsicologica',
       },
+      { title: 'Sexualidade', href: '/sexualidade' },
     ],
   );
   assert.equal(new Set(services.map(({ href }) => href)).size, services.length);

@@ -1,0 +1,31 @@
+{
+  "repository": "https://github.com/DiegoSapio97/INSPEM-TDAH",
+  "commit": "4d4e75295b6e715ff38424178fee206328e6fa06",
+  "route": "/tdah/",
+  "sourceFiles": [
+    "components/ComoComecar.astro",
+    "components/ComoFunciona.astro",
+    "components/CtaFinal.astro",
+    "components/Equipe.astro",
+    "components/Faq.astro",
+    "components/Footer.astro",
+    "components/Header.astro",
+    "components/Hero.astro",
+    "components/Investimento.astro",
+    "components/Localizacao.astro",
+    "components/ParaQuem.astro",
+    "components/Photo.astro",
+    "components/Reconhecimento.astro",
+    "components/WhatsAppButton.astro",
+    "data/photos.ts",
+    "data/siteConfig.ts",
+    "styles/device-mobile.css",
+    "styles/fonts.css",
+    "styles/global.css",
+    "styles/refinements.css",
+    "layouts/Layout.astro",
+    "pages/index.astro"
+  ],
+  "legalPolicy": "Shared reviewed documents at root; source legal pages are not imported.",
+  "maps": "External link only; no automatic third-party embed."
+}

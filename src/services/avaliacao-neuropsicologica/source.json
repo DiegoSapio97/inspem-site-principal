@@ -1,0 +1,32 @@
+{
+  "repository": "https://github.com/DiegoSapio97/inspem-avaliacao-neuropsi",
+  "commit": "ddea0216865a398b9739eb0f8b0540e57b4cf262",
+  "route": "/avaliacao-neuropsicologica/",
+  "sourceFiles": [
+    "components/ComoComecar.astro",
+    "components/ComoFunciona.astro",
+    "components/CtaFinal.astro",
+    "components/Equipe.astro",
+    "components/Faq.astro",
+    "components/Footer.astro",
+    "components/Header.astro",
+    "components/Hero.astro",
+    "components/Investimento.astro",
+    "components/Localizacao.astro",
+    "components/ParaQuem.astro",
+    "components/Photo.astro",
+    "components/ProcessoAvaliacao.astro",
+    "components/Reconhecimento.astro",
+    "components/WhatsAppButton.astro",
+    "data/photos.ts",
+    "data/siteConfig.ts",
+    "styles/device-mobile.css",
+    "styles/fonts.css",
+    "styles/global.css",
+    "styles/refinements.css",
+    "layouts/Layout.astro",
+    "pages/index.astro"
+  ],
+  "legalPolicy": "Shared reviewed documents at root; source legal pages are not imported.",
+  "maps": "External link only; no automatic third-party embed."
+}

@@ -1,0 +1,56 @@
+---
+const scenes = [
+  {
+    title: "À noite",
+    desc: "Você deita e a mente <strong>acelera</strong> — repassa o dia, antecipa o amanhã.",
+    path: "M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"
+  },
+  {
+    title: "Durante o dia",
+    desc: 'Um <strong>"e se?"</strong> atrás do outro — e nenhum com resposta.',
+    path: "M20 12a8 8 0 1 0-15.2 3.5L4 20l4.6-.8A8 8 0 0 0 20 12z",
+    extraPath: "M9 11.5h.01M12.5 11.5h.01M16 11.5h.01"
+  },
+  {
+    title: "No corpo",
+    desc: "Peito apertado, mandíbula travada, sono que <strong>não descansa</strong>.",
+    path: "M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 6.7 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"
+  },
+  {
+    title: "Nas escolhas",
+    desc: "Você adia, evita — e termina o dia <strong>se culpando</strong>.",
+    path: "M18 6L6 18M6 6l12 12"
+  }
+];
+---
+
+<section id="para-quem" class="section">
+  <p class="eyebrow">Para quem é</p>
+  <h2>Talvez você reconheça a <em>sua própria semana</em> aqui.</h2>
+
+  <div class="scenes">
+    {scenes.map(s => (
+      <div class="scene">
+        <span class="ic">
+          <svg viewBox="0 0 24 24">
+            <path d={s.path} />
+            {s.extraPath && <path d={s.extraPath} stroke-width="2.6" />}
+          </svg>
+        </span>
+        <div>
+          <h3>{s.title}</h3>
+          <p set:html={s.desc} />
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="hope">
+    <p>A ansiedade começou a decidir por você. <em>A terapia é o caminho de volta para você decidir de novo.</em></p>
+  </div>
+
+  <div class="closing">
+    <p>Sentir ansiedade faz parte da vida. Quando ela vira <strong>companhia constante</strong>, vale conversar com alguém.</p>
+    <p>A Terapia Cognitivo-Comportamental trabalha exatamente isso: entender o que mantém o <span class="accent">alarme disparando</span> — e aprender a reajustá-lo.</p>
+  </div>
+</section>

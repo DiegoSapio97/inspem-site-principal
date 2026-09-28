@@ -1,0 +1,41 @@
+---
+import WhatsAppButton from './WhatsAppButton.astro';
+
+const steps = [
+  {
+    n: "1",
+    title: "Você chama no WhatsApp",
+    desc: "Manda uma mensagem pedindo a <strong>triagem</strong>. Só isso — não precisa saber o que dizer nem ter certeza de nada."
+  },
+  {
+    n: "2",
+    title: "A gente conversa sobre a sua demanda",
+    desc: "Entendemos o que você está vivendo, se a clínica atende o seu caso e conversamos sobre <strong>valores</strong> — com transparência, antes de qualquer decisão."
+  },
+  {
+    n: "3",
+    title: "Agendamos a primeira sessão",
+    desc: "Se fizer sentido para você, marcamos o primeiro encontro. Você já chega sabendo <strong>quem atende, como funciona e quanto custa</strong>."
+  }
+];
+---
+
+<section id="como-comecar" class="section">
+  <p class="eyebrow">Como começar</p>
+  <h2>O primeiro passo é <em>só uma mensagem</em></h2>
+  <p class="lead">Sem compromisso e sem formulário longo. Você chama no WhatsApp e a gente entende, juntos, <strong>se a clínica é o lugar certo para o seu momento</strong>.</p>
+
+  <div class="steps">
+    {steps.map(step => (
+      <div class="step">
+        <span class="n">{step.n}</span>
+        <h3>{step.title}</h3>
+        <p set:html={step.desc} />
+      </div>
+    ))}
+  </div>
+
+  <div class="cta-wrap">
+    <WhatsAppButton />
+  </div>
+</section>

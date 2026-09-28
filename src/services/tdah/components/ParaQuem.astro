@@ -1,0 +1,75 @@
+---
+const scenes = [
+  {
+    title: "Planos interrompidos",
+    desc: "Você planeja o que deseja realizar, mas perde o ritmo antes de concluir suas metas.",
+    icon: "tasks",
+    paths: [
+      "M3 5.5 4.5 7 7.5 4",
+      "M10 6h10",
+      "M4 11h3v3H4z",
+      "M10 12.5h10",
+      "M4 17h3v3H4z",
+      "M10 18.5h7"
+    ]
+  },
+  {
+    title: "Prioridades confusas",
+    desc: "Você tenta cuidar de várias demandas e tem dificuldade para escolher o que vem primeiro.",
+    icon: "doubt",
+    paths: [
+      "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z",
+      "M9.2 9a3 3 0 1 1 4.2 2.75C12.5 12.25 12 13 12 14",
+      "M12 18h.01"
+    ]
+  },
+  {
+    title: "Tempo e atrasos",
+    desc: "Você perde a noção do tempo, se atrasa e termina o dia com tarefas pendentes.",
+    icon: "clock",
+    paths: ["M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z", "M12 6v6l4 2"]
+  },
+  {
+    title: "Culpa e cobrança",
+    desc: "Você se cobra por não manter o que planejou e passa a duvidar da própria capacidade.",
+    icon: "self-criticism",
+    paths: [
+      "M7.5 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z",
+      "M2.5 21a5 5 0 0 1 10 0",
+      "M14 4h6a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2l-3 3v-3h-1a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z",
+      "M17 6.5v3",
+      "M17 11.2h.01"
+    ]
+  }
+];
+---
+
+<section id="para-quem" class="section">
+  <p class="eyebrow">Para quem é</p>
+  <h2>Talvez você reconheça <em>estas dificuldades</em> na sua rotina.</h2>
+
+  <div class="scenes">
+    {scenes.map(s => (
+      <div class="scene">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            {s.paths.map(path => <path d={path} />)}
+          </svg>
+        </span>
+        <div>
+          <h3>{s.title}</h3>
+          <p set:html={s.desc} />
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="hope">
+    <p>A psicoterapia pode ajudar você a criar estratégias e a lidar consigo mesmo <em>com mais leveza.</em></p>
+  </div>
+
+  <div class="closing">
+    <p>Essas situações não confirmam um diagnóstico. Se você tem ou suspeita de TDAH, uma avaliação cuidadosa pode esclarecer as suas dificuldades.</p>
+    <p>Na TCC, você compreende seus padrões e desenvolve estratégias para organizar o tempo, definir prioridades e concluir tarefas.</p>
+  </div>
+</section>

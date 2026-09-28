@@ -1,0 +1,32 @@
+---
+import { siteConfig } from '../data/siteConfig';
+import Photo from './Photo.astro';
+import { photos } from '../data/photos';
+---
+
+<div class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Psicoterapia em TCC para adultos com TDAH · Porto Alegre</p>
+
+    <h1>Você planeja, mas não realiza suas metas?<br /><em>Com ciência, é possível melhorar</em></h1>
+
+    <p class="sub"><span class="pain">Você adia, se atrasa e termina se culpando.</span> Com diagnóstico ou suspeita de TDAH, a psicoterapia ajuda a construir uma rotina de maneira estruturada que caminhe com seus objetivos e traga mais leveza.</p>
+
+    <div class="cta-row">
+      <a class="btn-primary" href={siteConfig.contact.whatsappDirectUrl}>Quero começar essa conversa</a>
+    </div>
+
+    <div class="social-proof">
+      <span class="stars">★★★★★</span>
+      <b>5,0 no Google</b>
+      <a href="#reconhecimento">veja o que falam sobre a clínica ↓</a>
+    </div>
+
+    <p class="note">Atendimento por estagiários de Psicologia, com supervisão semanal de psicólogas mestre e doutora. <a href="#equipe">Conheça a equipe e os registros no CRP.</a></p>
+  </div>
+
+  <figure class="hero-photo">
+    <Photo photo={photos.hero} />
+    <figcaption>{photos.hero.caption}</figcaption>
+  </figure>
+</div>

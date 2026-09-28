@@ -1,0 +1,24 @@
+---
+import WhatsAppButton from './WhatsAppButton.astro';
+import Photo from './Photo.astro';
+import { photos } from '../data/photos';
+
+const navLinks = [
+  { href: "#equipe", label: "Equipe" },
+  { href: "#como-funciona", label: "Como funciona" },
+  { href: "#faq", label: "FAQ" },
+  { href: "#localizacao", label: "Localização" },
+];
+---
+
+<header>
+  <a class="logo" href="/" aria-label="INSPEM — página inicial">
+    <Photo photo={photos.logo} />
+  </a>
+  <nav aria-label="Navegação principal">
+    {navLinks.map(link => (
+      <a href={link.href}>{link.label}</a>
+    ))}
+    <WhatsAppButton text="WhatsApp" showIcon={false} target="_blank" rel="noopener" />
+  </nav>
+</header>

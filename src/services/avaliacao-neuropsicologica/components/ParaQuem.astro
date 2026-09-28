@@ -1,0 +1,76 @@
+---
+const scenes = [
+  {
+    title: "Atenção, organização e memória",
+    desc: "Você percebe esquecimentos, desatenção, dificuldade para organizar tarefas ou mudanças no funcionamento que antes parecia habitual.",
+    icon: "archive"
+  },
+  {
+    title: "Aprendizagem, raciocínio e inteligência",
+    desc: "Você ou alguém da sua família enfrenta dificuldades para aprender, resolver problemas ou compreender o próprio potencial cognitivo.",
+    icon: "brain-gears"
+  },
+  {
+    title: "Comunicação, interação e desenvolvimento",
+    desc: "Existem dúvidas sobre desenvolvimento, comportamento, interação social ou características que podem estar relacionadas ao TEA.",
+    icon: "dialogue"
+  },
+  {
+    title: "Personalidade, emoções e comportamento",
+    desc: "Você quer compreender padrões emocionais, formas de reagir e características da personalidade que interferem na rotina ou nos relacionamentos.",
+    icon: "puzzle"
+  }
+];
+---
+
+<section id="para-quem" class="section">
+  <p class="eyebrow">Quando procurar</p>
+  <h2>Quando faltam respostas, <em>vale olhar o conjunto</em></h2>
+
+  <div class="scenes">
+    {scenes.map(s => (
+      <div class="scene">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            {s.icon === "archive" && (
+              <>
+                <path d="M4 4h6l2 2h8v14H4z" />
+                <path d="M4 9h16M8 13h8M8 16.5h8" />
+              </>
+            )}
+            {s.icon === "brain-gears" && (
+              <>
+                <path d="M12 5.2A3.1 3.1 0 0 0 6.2 4a3.4 3.4 0 0 0-1.4 5.9 3.4 3.4 0 0 0 1.4 5.8A3.1 3.1 0 0 0 12 18.8zM12 5.2A3.1 3.1 0 0 1 17.8 4a3.4 3.4 0 0 1 1.4 5.9 3.4 3.4 0 0 1-1.4 5.8A3.1 3.1 0 0 1 12 18.8z" />
+                <path d="M12 5.2v13.6M8 7.5c1.8-.2 2.8.9 2.8 2.2M7.5 13c1.7-.2 2.8.7 3 2" />
+                <circle cx="16.2" cy="13.5" r="1.8" />
+                <path d="M16.2 10.6v1.1M16.2 15.3v1.1M13.3 13.5h1.1M18 13.5h1.1M14.2 11.5l.8.8M17.4 14.7l.8.8M18.2 11.5l-.8.8M15 14.7l-.8.8" />
+              </>
+            )}
+            {s.icon === "dialogue" && (
+              <>
+                <path d="M4 5h9a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3H8l-4 3v-3a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3z" />
+                <path d="M9 10h9a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3h-2v3l-4-3H9a3 3 0 0 1-3-3v-1" />
+              </>
+            )}
+            {s.icon === "puzzle" && (
+              <path d="M4 4h6v2a2 2 0 1 0 4 0V4h6v6h-2a2 2 0 1 0 0 4h2v6h-6v-2a2 2 0 1 0-4 0v2H4v-6h2a2 2 0 1 0 0-4H4z" />
+            )}
+          </svg>
+        </span>
+        <div>
+          <h3>{s.title}</h3>
+          <p set:html={s.desc} />
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="hope">
+    <p>Um sinal isolado <em>não explica a pessoa inteira.</em></p>
+  </div>
+
+  <div class="closing">
+    <p>Essas situações não confirmam TDAH, TEA ou qualquer outra condição.</p>
+    <p>A avaliação reúne informações para verificar como os sinais se relacionam e quais hipóteses fazem sentido.</p>
+  </div>
+</section>

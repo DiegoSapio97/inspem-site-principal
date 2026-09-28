@@ -1,0 +1,24 @@
+---
+import { siteConfig } from '../data/siteConfig';
+---
+
+<section id="valor" class="section fees-section" aria-labelledby="fees-title">
+  <p class="eyebrow">Investimento</p>
+
+  <div class="investment-layout">
+    <div class="investment-price" aria-label={`${siteConfig.assessment.price} reais pelo pacote completo de avaliação neuropsicológica`}>
+      <h2 id="fees-title"><span class="price-currency">R$</span> {siteConfig.assessment.price}</h2>
+      <p class="investment-unit">pelo pacote completo</p>
+      <p class="investment-duration"><strong>{siteConfig.assessment.sessions}</strong></p>
+    </div>
+
+    <div class="investment-details">
+      <p><strong>Anamnese, testes, análise, devolutiva e laudo técnico</strong> incluídos.</p>
+      <p><strong>Consulta médica opcional</strong>, quando necessária, sem custo adicional.</p>
+      <p><strong>Pagamento à vista.</strong></p>
+      <p>Parcelamento no cartão <strong>com juros</strong>.</p>
+    </div>
+  </div>
+
+  <a class="investment-faq" href="#faq">Entenda os detalhes no FAQ</a>
+</section>

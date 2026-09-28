@@ -1,0 +1,51 @@
+---
+import ExternalMapLink from '../../../../components/ExternalMapLink.astro';
+import { siteConfig } from '../../data/siteConfig';
+import Photo from '../Photo.astro';
+import { galleryHero, galleryRooms } from '../../data/photos';
+const accessCards = [
+  { title: 'De ônibus', desc: 'Corredor exclusivo da <strong>Av. Osvaldo Aranha</strong>, com estações a poucos metros (Araújo Vianna · HPS). <strong>Dezenas de linhas</strong> ligam ao Centro, Zona Norte, Zona Sul e às universidades.', path: 'M4 10h16M8 21l1.5-4M16 21l-1.5-4', rect: true },
+  { title: 'De carro', desc: 'Estacionamento no edifício com <strong>manobrista</strong> (<span class="num">R$ 25</span>) e vagas na rua em geral disponíveis. Pontos de parada para <strong>Uber/99 e táxi</strong> bem sinalizados na porta.', path: 'M5 16l1.6-4.8A2 2 0 0 1 8.5 9.5h7a2 2 0 0 1 1.9 1.7L19 16M5 16h14M5 16v3.5M19 16v3.5' },
+  { title: 'Acessível e privativo', desc: '<strong>Elevador</strong> até o 16º andar, <strong>portaria 24 horas</strong> e calçadas amplas no trecho — chegada tranquila a qualquer horário, com discrição.', path: 'M9.5 12.5l2 2 4-4.5', circle: true }
+];
+---
+<section id="localizacao" class="section">
+  <p class="eyebrow">Localização</p>
+  <h2>Atendimento presencial no Bom Fim</h2>
+  <p class="lead">Você encontra a INSPEM em frente ao Parque da Redenção, em Porto Alegre.</p>
+  <div class="loc-grid">
+    <div class="addr-card">
+      <span class="addr-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.3-7-11a7 7 0 1 1 14 0c0 5.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>Bom Fim · Porto Alegre</span>
+      <p class="addr-main">{siteConfig.location.address}<br />{siteConfig.location.complement}</p>
+      <p class="addr-detail"><strong>16º andar, com elevador e portaria 24 horas.</strong><br />{siteConfig.location.landmark} · {siteConfig.location.cep}</p>
+      <a class="btn-maps" href={siteConfig.contact.mapsUrl} target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 20l-6-3V4l6 3m0 13l6-3m-6 3V7m6 10l6 3V7l-6-3m0 13V4M9 7L3 4m6 3l6-3m6 3l-6-3"/></svg>Abrir no Google Maps</a>
+    </div>
+    <div class="map-card"><ExternalMapLink url={siteConfig.contact.mapsUrl} /></div>
+  </div>
+  <div class="access">{accessCards.map(card => <div class="acc-card"><svg viewBox="0 0 24 24" aria-hidden="true">{card.rect && <rect x="4" y="3" width="16" height="14" rx="2.5"/>}<path d={card.path}/>{card.circle && <circle cx="12" cy="12" r="9"/>}</svg><h3>{card.title}</h3><p set:html={card.desc}/></div>)}</div>
+  <p class="gallery-label">Conheça o espaço de atendimento</p>
+  <figure class="gallery-hero"><Photo photo={galleryHero} loading="lazy"/><figcaption>{galleryHero.caption}</figcaption></figure>
+  <div class="gallery-strip" role="region" aria-roledescription="carrossel" aria-label="Fotos das salas">
+    <div class="gallery-toolbar"><p class="gallery-hint">Deslize para o lado para ver as salas</p><div class="gallery-nav">
+      <button type="button" class="gallery-nav-btn" data-dir="-1" aria-label="Foto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <button type="button" class="gallery-nav-btn" data-dir="1" aria-label="Próxima foto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div></div>
+    <div class="gallery-track" tabindex="0">{galleryRooms.map(photo => <figure><Photo photo={photo} loading="lazy"/><figcaption>{photo.caption}</figcaption></figure>)}</div>
+  </div>
+</section>
+<script>
+  const strip = document.querySelector('#localizacao .gallery-strip');
+  const track = strip?.querySelector('.gallery-track');
+  if (strip instanceof HTMLElement && track instanceof HTMLElement) {
+    const scrollByCard = (dir: number) => {
+      const card = track.querySelector('figure');
+      if (!(card instanceof HTMLElement)) return;
+      const gap = Number.parseFloat(getComputedStyle(track).columnGap) || 12;
+      track.scrollBy({ left: dir * (card.offsetWidth + gap), behavior: 'smooth' });
+    };
+    strip.querySelectorAll('.gallery-nav-btn').forEach(btn => btn.addEventListener('click', () => scrollByCard(Number((btn as HTMLButtonElement).dataset.dir))));
+    track.addEventListener('keydown', event => {
+      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') { event.preventDefault(); scrollByCard(event.key === 'ArrowRight' ? 1 : -1); }
+    });
+  }
+</script>

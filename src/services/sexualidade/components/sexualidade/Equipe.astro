@@ -1,0 +1,20 @@
+---
+import { sexualidadeSupervisor as supervisor } from '../../data/sexualidadeSupervisor';
+import Photo from '../Photo.astro';
+import { sexualidadePhotos } from '../../data/sexualidadePhotos';
+---
+<section id="equipe" class="section">
+  <p class="eyebrow">A equipe</p>
+  <h2>Conheça a equipe que acompanha o atendimento</h2>
+  <p class="lead">Antes de começar, você recebe informações sobre quem vai atender você e como funciona a supervisão clínica.</p>
+  <figure class="team-photo"><Photo photo={sexualidadePhotos.equipe} loading="lazy" /><figcaption>{sexualidadePhotos.equipe.caption}</figcaption></figure>
+  <p class="sup-label">Quem supervisiona o seu caso</p>
+  <div class="supervisors">
+    <div class="sup"><Photo photo={supervisor.photo} loading="lazy" /><div><h3>{supervisor.name}</h3><p class="role">{supervisor.role} · {supervisor.crp}</p><p>Especialização em:</p><ul>{supervisor.qualifications.map(q => <li><strong>{q}</strong></li>)}</ul></div></div>
+  </div>
+  <div class="model">
+    <h3>Quem conduz as sessões</h3>
+    <p>Os atendimentos individuais e de casal são conduzidos por <strong>estagiários de Psicologia do último ano da graduação</strong>.</p>
+    <p>Os casos recebem <strong>supervisão semanal de {supervisor.name}</strong>, supervisor responsável pelas demandas de sexualidade e relacionamentos.</p>
+  </div>
+</section>

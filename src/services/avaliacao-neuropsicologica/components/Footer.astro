@@ -1,0 +1,52 @@
+---
+import { siteConfig } from '../data/siteConfig';
+import Photo from './Photo.astro';
+import { photos } from '../data/photos';
+---
+
+<footer id="footer" class="site-footer" aria-label="Rodapé institucional">
+  <div class="footer-wrap">
+    <div class="footer-brand">
+      <a class="footer-brand-name" href="/" aria-label="INSPEM — voltar ao início">
+        <Photo photo={photos.logo} />
+      </a>
+    </div>
+
+    <div class="footer-rule" aria-hidden="true"></div>
+
+    <div class="footer-grid">
+      <div class="footer-column">
+        <h2 class="footer-column-title">Endereço</h2>
+        <address class="footer-main-text">
+          {siteConfig.location.address} &mdash; Sala 1610<br />
+          {siteConfig.location.neighborhood}<br />
+          <span class="footer-detail">{siteConfig.location.cep}</span>
+        </address>
+      </div>
+
+      <div class="footer-column">
+        <h2 class="footer-column-title">Supervisão das avaliações</h2>
+        {siteConfig.supervisors.map(sup => (
+          <div class="footer-person">
+            <strong>{sup.fullName}</strong>
+            <span class="footer-detail">{sup.crp}</span>
+          </div>
+        ))}
+      </div>
+
+      <div class="footer-column footer-institutional">
+        <h2 class="footer-column-title">Informações institucionais</h2>
+        <p class="footer-company"><strong>{siteConfig.legal.companyName}</strong></p>
+        <p class="footer-detail">CNPJ {siteConfig.legal.cnpj}<br />{siteConfig.legal.crpClinic}</p>
+        <nav class="footer-policy-list" aria-label="Documentos institucionais">
+          <a href="/politica-de-privacidade">Política de Privacidade</a>
+          <a href="/politica-de-privacidade#cookies">Cookies</a>
+          <a href="/termos-de-uso">Termos de Uso</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="footer-rule footer-rule-bottom" aria-hidden="true"></div>
+    <p class="footer-copyright">&copy; 2026 INSPEM. Todos os direitos reservados.</p>
+  </div>
+</footer>

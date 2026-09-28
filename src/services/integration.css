@@ -1,0 +1,13 @@
+/* Integration-only fixes. Service-specific styles never load on the main page. */
+.site-footer .footer-policy-list > a {
+  display: block;
+  min-height: 32px;
+}
+
+/* Keep the original decorative glow within the mobile image width. */
+@media (max-width: 480px) {
+  .hero-photo::before { inset: 10% 0 -5% 8%; }
+  header .logo { flex: 1 1 0; min-width: 0; }
+  header .logo img { width: 100%; max-width: 230px; }
+  header nav { flex: 0 0 auto; }
+}

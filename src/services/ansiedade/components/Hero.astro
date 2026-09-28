@@ -1,0 +1,32 @@
+---
+import { siteConfig } from '../data/siteConfig';
+import Photo from './Photo.astro';
+import { photos } from '../data/photos';
+---
+
+<div class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Psicoterapia em TCC para adultos · Bom Fim, Porto Alegre</p>
+
+    <h1>Um caminho para sair do ciclo de pensar demais e paralisar — <em>com mais leveza.</em></h1>
+
+    <p class="sub"><span class="pain">Começar de menos, terminar o dia se culpando.</span> Na psicoterapia em TCC, você pode <strong>compreender o que mantém esse ciclo</strong> e construir <strong>estratégias aplicáveis à sua rotina</strong> — com acompanhamento e ajustes ao longo do processo.</p>
+
+    <div class="cta-row">
+      <a class="btn-primary" href={siteConfig.contact.whatsappDirectUrl}>Quero começar essa conversa</a>
+    </div>
+
+    <div class="social-proof">
+      <span class="stars">★★★★★</span>
+      <b>5,0 no Google</b>
+      <a href="#reconhecimento">veja o que falam sobre a clínica ↓</a>
+    </div>
+
+    <p class="note">Atendimento por estagiários de Psicologia, com supervisão semanal de psicólogas mestre e doutora. <a href="#equipe">Conheça a equipe e os registros no CRP.</a></p>
+  </div>
+
+  <figure class="hero-photo">
+    <Photo photo={photos.hero} />
+    <figcaption>{photos.hero.caption}</figcaption>
+  </figure>
+</div>

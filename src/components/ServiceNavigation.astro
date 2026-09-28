@@ -1,0 +1,26 @@
+---
+import { services } from '../data/site.mjs';
+const { current } = Astro.props;
+---
+<div class="service-navigation">
+  <a class="home-link" href="/">Página inicial</a>
+  <details>
+    <summary>Serviços</summary>
+    <ul aria-label="Serviços da INSPEM">
+      {services.map(service => (
+        <li><a href={service.href} aria-current={service.href === `/${current}` ? 'page' : undefined}>{service.title}</a></li>
+      ))}
+    </ul>
+  </details>
+</div>
+<style>
+  .service-navigation { position: relative; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 16px; max-width: 1100px; margin: 0 auto; padding: 14px 24px; border-bottom: 1px solid #ffffff1a; font: 500 14px/1.5 system-ui, sans-serif; color: #ddd9e0; }
+  .service-navigation a { display: block; color: inherit; text-decoration: none; }
+  .home-link, summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; }
+  .home-link::before { content: '←'; margin-right: 8px; }
+  summary { gap: 10px; }
+  details ul { position: absolute; right: 16px; top: calc(100% - 8px); width: min(300px, calc(100vw - 32px)); list-style: none; padding: 12px; border: 1px solid #ffffff30; border-radius: 12px; background: #191a1e; box-shadow: 0 12px 30px #0006; }
+  .service-navigation li a { padding: 12px; border-radius: 6px; }
+  .service-navigation a:hover, .service-navigation a[aria-current] { color: #c6a3ea; }
+  .service-navigation :is(a, summary):focus-visible { outline: 2px solid #c6a3ea; outline-offset: 3px; }
+</style>

@@ -1,0 +1,107 @@
+---
+import { siteConfig } from '../data/siteConfig';
+
+const faqs = [
+  {
+    question: "Como saber se uma avaliação neuropsicológica pode ajudar?",
+    answers: [
+      "A avaliação pode ser considerada quando existem dúvidas persistentes sobre atenção, memória, aprendizagem, inteligência, desenvolvimento, comportamento, emoções ou personalidade. A conversa inicial ajuda a verificar se esse processo corresponde à sua demanda."
+    ]
+  },
+  {
+    question: "A avaliação confirma um diagnóstico?",
+    answers: [
+      "<strong>Não necessariamente.</strong> Os resultados podem sustentar uma hipótese, afastá-la ou indicar que outras informações e avaliações são necessárias. O processo também descreve pontos fortes e dificuldades mesmo quando nenhum diagnóstico é confirmado."
+    ]
+  },
+  {
+    question: "O que é avaliado?",
+    answers: [
+      "As áreas dependem da dúvida que motivou a procura. A equipe pode investigar atenção, memória, linguagem, aprendizagem, raciocínio, funções executivas, aspectos emocionais, comportamento e personalidade."
+    ]
+  },
+  {
+    question: "O processo dura exatamente oito sessões?",
+    answers: [
+      `Não. O processo costuma ocorrer em <strong>${siteConfig.assessment.sessions} semanais de ${siteConfig.assessment.duration}</strong>. A quantidade pode variar conforme a idade, a demanda e as necessidades do caso.`
+    ]
+  },
+  {
+    question: "Crianças, adolescentes, adultos e idosos podem ser avaliados?",
+    answers: [
+      "<strong>Sim.</strong> A avaliação atende pessoas em diferentes etapas do desenvolvimento. Os instrumentos e procedimentos são escolhidos conforme a idade e a finalidade."
+    ]
+  },
+  {
+    question: "Quem aplica os testes?",
+    answers: [
+      "Estagiários de Psicologia aplicam os testes sob supervisão de <strong>Simone Regina Sandri, CRP 07/2433</strong>. A equipe integra e discute as informações antes da devolutiva e do laudo."
+    ]
+  },
+  {
+    id: "faq-valor-duracao",
+    className: "faq-question-card",
+    name: "faq-servicos",
+    question: `O que está incluído nos R$ ${siteConfig.assessment.price}?`,
+    answers: [
+      "O pacote inclui anamnese, aplicação e análise dos testes, consulta médica opcional quando necessária, devolutiva e laudo técnico. O processo ocorre em aproximadamente oito sessões."
+    ]
+  },
+  {
+    question: "Quando a consulta médica é realizada?",
+    answers: [
+      "A consulta médica é opcional. Ela acontece quando a equipe considera que essa etapa pode contribuir para a avaliação. Quando indicada, ela já está incluída no pacote e não possui custo adicional."
+    ]
+  },
+  {
+    question: "O que recebo ao final?",
+    answers: [
+      "Você recebe um <strong>laudo técnico</strong> e participa de uma devolutiva. Nesse encontro, a equipe explica os resultados, responde às dúvidas e apresenta recomendações quando elas forem necessárias."
+    ]
+  },
+  {
+    question: "Posso parcelar o pagamento?",
+    answers: [
+      `Sim. O valor de <strong>R$ ${siteConfig.assessment.price}</strong> pode ser parcelado no cartão com juros. As condições são informadas antes do agendamento.`
+    ]
+  },
+  {
+    question: "A avaliação é presencial?",
+    answers: [
+      "<strong>Sim.</strong> Todos os encontros acontecem presencialmente na Av. Osvaldo Aranha, 1022, sala 1610, no bairro Bom Fim, em Porto Alegre."
+    ]
+  },
+  {
+    question: "Como solicito um horário?",
+    answers: [
+      "Clique em um dos botões de WhatsApp da página. Envie a mensagem e a equipe conversará com você sobre a demanda, o processo e a disponibilidade."
+    ]
+  }
+];
+---
+
+<section id="faq">
+  <div class="wrap">
+    <p class="eyebrow">Dúvidas frequentes</p>
+    <h2>O que quase todo mundo <em>pergunta antes de começar</em></h2>
+    <p class="faq-lead">Se a sua dúvida não estiver aqui, envie uma mensagem. A equipe pode explicar o processo antes do agendamento.</p>
+
+    <div class="faq">
+      {faqs.map(faq => (
+        <details id={faq.id} class={faq.className} name={faq.name}>
+          <summary>
+            {faq.question}
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </summary>
+          <div class="answer">
+            {faq.answers.map(ans => (
+              <p set:html={ans} />
+            ))}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

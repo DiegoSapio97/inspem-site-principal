@@ -31,6 +31,14 @@ export const services = [
     href: '/avaliacao-neuropsicologica',
     linkLabel: 'Conhecer a avaliação neuropsicológica',
   },
+  {
+    number: '05',
+    title: 'Sexualidade',
+    description:
+      'Psicoterapia presencial, individual e de casal, para dificuldades no sexo, relacionamentos e autoaceitação LGBT+.',
+    href: '/sexualidade',
+    linkLabel: 'Conhecer o atendimento em sexualidade',
+  },
 ];
 
 export const contact = {

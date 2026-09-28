@@ -1,0 +1,96 @@
+---
+import ServiceNavigation from '../../../components/ServiceNavigation.astro';
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/sexualidade/Footer.astro';
+import Photo from '../components/Photo.astro';
+import { sexualidadePhotos } from '../data/sexualidadePhotos';
+import { siteConfig } from '../data/siteConfig';
+import Equipe from '../components/sexualidade/Equipe.astro';
+import Localizacao from '../components/sexualidade/Localizacao.astro';
+import Reconhecimento from '../components/Reconhecimento.astro';
+const scenes = [
+  { title: 'Desempenho sexual', desc: 'Medo de falhar, dificuldades de ereção e ejaculação antes do desejado.', path: 'M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 6.7 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z' },
+  { title: 'Relacionamentos', desc: 'Conflitos, dificuldade para conversar e falta de intimidade.', path: 'M20 12a8 8 0 1 0-15.2 3.5L4 20l4.6-.8A8 8 0 0 0 20 12z M9 11.5h.01M12.5 11.5h.01M16 11.5h.01' },
+  { title: 'Autoaceitação LGBT+', desc: 'Vergonha, medo de rejeição e sofrimento diante do preconceito.', path: 'M12 3l8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3z M8 12l3 3 5-6' }
+];
+const steps = [
+  { title: 'Você solicita uma triagem', desc: 'Entre em contato pelo WhatsApp. Você pode dizer apenas que tem interesse no atendimento individual ou de casal.' },
+  { title: 'Conversamos sobre o que você procura', desc: 'A equipe entende sua demanda, verifica se o serviço é adequado e esclarece como o atendimento funciona.' },
+  { title: 'Combinamos o primeiro encontro', desc: 'Se você decidir começar, a equipe verifica os horários disponíveis e combina o agendamento com você.' }
+];
+const faqs = [
+  ['O atendimento é apenas para homens?', 'Não. A comunicação desta página tem foco em homens, mas o atendimento também acolhe outros públicos.'],
+  ['Posso fazer terapia individual para falar do meu relacionamento?', 'Sim. Você pode procurar atendimento individual mesmo que sua dificuldade envolva o relacionamento. Seu parceiro ou sua parceira não precisa participar das suas sessões.'],
+  ['Vocês atendem casais LGBT+?', 'Sim. O atendimento de casal acolhe diferentes orientações sexuais e identidades de gênero.'],
+  ['Preciso ter um diagnóstico para procurar atendimento?', 'Não. Você pode solicitar uma triagem para conversar sobre uma dificuldade, uma dúvida ou algo que esteja causando sofrimento.'],
+  ['E se eu tiver vergonha de falar sobre sexo?', 'Você pode começar dizendo que sente vergonha ou que não sabe como explicar. Não precisa contar tudo na primeira conversa.'],
+  ['O atendimento busca mudar minha orientação sexual ou identidade de gênero?', 'Não. O cuidado respeita quem você é. Ser LGBT+ não é uma doença nem algo a corrigir.'],
+  ['Dificuldades de ereção são sempre psicológicas?', 'Não. Elas podem envolver condições de saúde, efeitos de medicamentos e fatores emocionais. Se a dificuldade se repete, procure avaliação médica, mesmo que também esteja fazendo psicoterapia.'],
+  ['O atendimento é on-line?', 'Não. Os atendimentos apresentados nesta página são exclusivamente presenciais, na clínica, no Bom Fim, em Porto Alegre.'],
+  ['Quanto custa a sessão de casal?', 'O valor é de R$ 95 por sessão de casal. A sessão individual também custa R$ 95.'],
+  ['Quanto tempo dura cada sessão?', 'As sessões individuais e de casal duram 50 minutos.']
+];
+---
+<Layout title="Sexualidade e relacionamentos em Porto Alegre | INSPEM" description="Psicoterapia presencial, individual e de casal, para dificuldades no sexo, relacionamentos e sexualidade. Bom Fim, Porto Alegre. R$95 por sessão de 50 minutos.">
+  <Header />
+  <ServiceNavigation current="sexualidade" />
+  <main>
+  <div class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Sexualidade e relacionamentos · Porto Alegre</p>
+      <h1>Você pode se cobrar menos e se aceitar mais <em>consigo mesmo e com seu relacionamento.</em></h1>
+      <p class="sub">Dificuldades no sexo, conflitos na relação ou insegurança para viver sua sexualidade como homem LGBT+? Aqui, você encontra espaço para falar.</p>
+      <div class="cta-row"><a class="btn-primary" href={siteConfig.contact.whatsappUrl}>Solicitar triagem pelo WhatsApp</a></div>
+
+      <p class="note">Atendimento por estagiários de Psicologia, com supervisão semanal de Tiago Ribeiro. <a href="#equipe">Conheça o supervisor responsável e seu registro no CRP.</a></p>
+    </div>
+    <figure class="hero-photo"><Photo photo={sexualidadePhotos.hero} loading="eager" fetchpriority="high" /><figcaption>{sexualidadePhotos.hero.caption}</figcaption></figure>
+  </div>
+  <section id="para-quem" class="section">
+    <p class="eyebrow">Para quem é</p>
+    <h2>Podemos ajudar com</h2>
+    <p class="lead">Na psicoterapia individual ou de casal, você encontra apoio para lidar com estas questões.</p>
+    <div class="scenes">{scenes.map(s => <div class="scene"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d={s.path}/></svg></span><div><h3>{s.title}</h3><p>{s.desc}</p></div></div>)}</div>
+    <div class="closing"><p>Esta página conversa principalmente com homens, mas o atendimento não é exclusivo para eles.</p></div>
+  </section>
+  <section id="como-funciona" class="section">
+    <p class="eyebrow">Método e acompanhamento</p>
+    <h2>O cuidado começa por entender o que você está vivendo</h2>
+    <p class="intro">Nas primeiras sessões, conversamos sobre suas dificuldades, sua história e o que você deseja trabalhar. Os objetivos do acompanhamento são definidos com você.</p>
+    <div class="schedule"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="2.5"/><path d="M3.5 10h17M8 2.8V6.2M16 2.8V6.2"/><circle cx="12" cy="15.5" r="3.2"/><path d="M12 13.6v1.9l1.3.8"/></svg><div class="s-item"><span class="s-big">Presencial</span><span class="s-small">individual e casal</span></div><div class="s-sep" aria-hidden="true"></div><div class="s-item"><span class="s-big">50 minutos</span><span class="s-small">por sessão</span></div></div>
+    <div class="facts"><p class="facts-label">Atendimento individual</p><p>Você tem espaço para falar sobre sua vida sexual, seus relacionamentos e a maneira como se vê. Não é necessário que seu parceiro ou sua parceira participe para você cuidar dessas questões.</p></div>
+    <div class="facts"><p class="facts-label">Atendimento de casal</p><p>Vocês têm espaço para falar sobre conflitos, expectativas e dificuldades na intimidade. O trabalho busca compreender como vocês se relacionam e o que cada pessoa deseja para a relação.</p></div>
+    <div class="evidence"><p class="e-label">Quando outro cuidado também é importante</p><p>Dificuldades de ereção podem envolver fatores físicos e emocionais. Quando elas se repetem, é importante buscar avaliação médica. A psicoterapia não substitui essa avaliação.</p></div>
+  </section>
+  <section id="como-comecar" class="section">
+    <p class="eyebrow">Como começar</p><h2>Você pode começar com uma mensagem</h2>
+    <div class="steps">{steps.map((step, i) => <div class="step"><span class="n">{i + 1}</span><h3>{step.title}</h3><p>{step.desc}</p></div>)}</div>
+    <div class="cta-wrap"><a class="btn-primary" href={siteConfig.contact.whatsappUrl}>Solicitar triagem pelo WhatsApp</a></div>
+  </section>
+  <section id="valor" class="section fees-section" aria-labelledby="fees-title">
+    <p class="eyebrow">Investimento</p>
+    <div class="investment-layout"><div class="investment-price" aria-label="95 reais por sessão individual ou de casal, com duração de 50 minutos"><h2 id="fees-title"><span class="price-currency">R$</span> 95</h2><p class="investment-unit">por sessão</p><p class="investment-duration"><strong>50 minutos</strong></p></div><div class="investment-details"><p><strong>Atendimento individual ou de casal.</strong></p><p>O valor da sessão de casal é R$ 95, <strong>não por pessoa</strong>.</p><p>Ambas as modalidades são <strong>exclusivamente presenciais</strong>, no Bom Fim, em Porto Alegre.</p></div></div>
+    <a class="investment-faq" href="#faq">Entenda os detalhes no FAQ</a>
+  </section>
+  <Equipe />
+  <Reconhecimento />
+  <Localizacao />
+  <section id="faq"><div class="wrap"><p class="eyebrow">Dúvidas frequentes</p><h2>O que quase todo mundo <em>pergunta antes de começar</em></h2><p class="faq-lead">Se a sua dúvida não estiver aqui, ela pode ser respondida na triagem — sem compromisso.</p><div class="faq">{faqs.map(([question, answer]) => <details><summary>{question}<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="answer"><p>{answer}</p></div></details>)}</div></div></section>
+  <section id="comece"><div class="wrap"><div class="cta"><h2>Você não precisa ter todas as respostas para começar</h2><p class="sub">Se o sexo, o relacionamento ou a forma como você vive sua sexualidade estão trazendo sofrimento, você pode conversar com a equipe sobre o atendimento.</p><a class="btn-primary" href={siteConfig.contact.whatsappUrl} target="_blank" rel="noopener">Solicitar triagem pelo WhatsApp</a></div></div></section>
+  </main>
+  <Footer />
+</Layout>
+
+<style is:global>
+  /* Preserva os rostos das fotos novas nos recortes do layout existente. */
+  .hero-photo img { object-position: center 15%; }
+  .team-photo img { object-position: center top; }
+  /* Isolado nesta rota: a largura fixa do link original transbordava em 320px. */
+  @media (max-width: 480px) {
+    header .logo { width: auto; min-width: 0; flex: 1 1 auto; }
+    header .logo img { width: 100%; max-width: 268px; }
+    /* O halo decorativo original ultrapassava a largura do documento. */
+    .hero-photo::before { right: 0; }
+  }
+</style>

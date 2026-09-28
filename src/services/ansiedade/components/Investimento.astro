@@ -1,0 +1,24 @@
+---
+import { siteConfig } from '../data/siteConfig';
+---
+
+<section id="valor" class="section fees-section" aria-labelledby="fees-title">
+  <p class="eyebrow">Investimento</p>
+
+  <div class="investment-layout">
+    <div class="investment-price" aria-label={`${siteConfig.session.price} reais por atendimento, com duração de ${siteConfig.session.duration}`}>
+      <h2 id="fees-title"><span class="price-currency">R$</span> {siteConfig.session.price}</h2>
+      <p class="investment-unit">por atendimento</p>
+      <p class="investment-duration"><strong>{siteConfig.session.duration}</strong></p>
+    </div>
+
+    <div class="investment-details">
+      <p><strong>Atendimento particular</strong> &mdash; não atendemos planos de saúde.</p>
+      <p><strong>Nota fiscal</strong> emitida em todos os atendimentos.</p>
+      <p>Possibilidade de <strong>reembolso</strong>, conforme o plano.</p>
+      <p>Valor não reembolsado pode ser <strong>dedutível no Imposto de Renda</strong>.</p>
+    </div>
+  </div>
+
+  <a class="investment-faq" href="#faq">Entenda os detalhes no FAQ</a>
+</section>

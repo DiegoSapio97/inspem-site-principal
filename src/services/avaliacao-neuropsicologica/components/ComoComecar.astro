@@ -1,0 +1,41 @@
+---
+import WhatsAppButton from './WhatsAppButton.astro';
+
+const steps = [
+  {
+    n: "1",
+    title: "Você chama no WhatsApp",
+    desc: "Envie uma mensagem dizendo que deseja saber mais sobre a <strong>avaliação neuropsicológica</strong>."
+  },
+  {
+    n: "2",
+    title: "A equipe conversa sobre a demanda",
+    desc: "A equipe entende o motivo da procura, explica o processo e verifica a <strong>disponibilidade</strong>."
+  },
+  {
+    n: "3",
+    title: "A primeira sessão é agendada",
+    desc: "Se o serviço fizer sentido para o caso, a equipe combina o horário e orienta você sobre o <strong>início da avaliação</strong>."
+  }
+];
+---
+
+<section id="como-comecar" class="section">
+  <p class="eyebrow">Como começar</p>
+  <h2>O primeiro passo é <em>só uma mensagem</em></h2>
+  <p class="lead">Você não precisa chegar com certeza sobre um diagnóstico. A conversa inicial verifica <strong>se a avaliação corresponde à sua demanda</strong>.</p>
+
+  <div class="steps">
+    {steps.map(step => (
+      <div class="step">
+        <span class="n">{step.n}</span>
+        <h3>{step.title}</h3>
+        <p set:html={step.desc} />
+      </div>
+    ))}
+  </div>
+
+  <div class="cta-wrap">
+    <WhatsAppButton text="Solicitar avaliação pelo WhatsApp" target="_blank" rel="noopener" />
+  </div>
+</section>

@@ -1,0 +1,46 @@
+---
+import WhatsAppButton from './WhatsAppButton.astro';
+
+const steps = [
+  {
+    n: "1",
+    title: "1ª sessão — entrevista de anamnese",
+    desc: "A equipe conversa com você ou com os responsáveis para compreender a demanda, a história e as dúvidas que motivaram a avaliação."
+  },
+  {
+    n: "2–6",
+    title: "2ª à 6ª sessões — aplicação dos testes",
+    desc: "A equipe aplica os instrumentos selecionados para investigar as áreas relacionadas à demanda."
+  },
+  {
+    n: "7",
+    title: "7ª sessão — consulta médica opcional",
+    desc: "Quando a equipe considera necessário, o processo inclui uma consulta médica sem custo adicional."
+  },
+  {
+    n: "8",
+    title: "8ª sessão — devolutiva e laudo",
+    desc: "A equipe apresenta os resultados, explica o laudo técnico e conversa sobre as recomendações para os próximos passos."
+  }
+];
+---
+
+<section id="processo" class="section process-section">
+  <p class="eyebrow">Etapas da avaliação</p>
+  <h2>Um processo completo, <em>explicado desde o início</em></h2>
+  <p class="lead">A avaliação acontece em <strong>aproximadamente oito sessões semanais de 50 minutos</strong>. O número de encontros pode variar conforme a necessidade de cada caso.</p>
+
+  <div class="steps process-steps">
+    {steps.map(step => (
+      <div class="step">
+        <span class="n">{step.n}</span>
+        <h3>{step.title}</h3>
+        <p>{step.desc}</p>
+      </div>
+    ))}
+  </div>
+
+  <div class="cta-wrap">
+    <WhatsAppButton text="Tirar uma dúvida pelo WhatsApp" target="_blank" rel="noopener" />
+  </div>
+</section>

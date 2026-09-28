@@ -1,0 +1,47 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+import { siteConfig } from '../data/siteConfig';
+import { photos } from '../data/photos';
+import newsreaderLatin from '@fontsource/newsreader/files/newsreader-latin-500-normal.woff2?url';
+import newsreaderItalic from '@fontsource/newsreader/files/newsreader-latin-500-italic.woff2?url';
+import '../styles/fonts.css';
+import '../styles/global.css';
+import '../styles/refinements.css';
+import '../styles/device-mobile.css';
+import '../../integration.css';
+
+const {
+  title = siteConfig.title,
+  description = siteConfig.description,
+} = Astro.props;
+---
+
+<!doctype html>
+<!-- Direção visual: Clínica editorial noturna INSPEM; Newsreader + fonte do sistema, fundo grafite e violeta #A670DB. -->
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="canonical" href={new URL('/depressao/', Astro.site)} />
+    <meta name="description" content={description} />
+    <link rel="icon" href={photos.logo.src} type="image/webp" />
+    <link rel="preload" href={newsreaderLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={newsreaderItalic} as="font" type="font/woff2" crossorigin />
+    <link
+      rel="preload"
+      href={photos.hero.src}
+      as="image"
+      type="image/webp"
+      media="(min-width: 861px)"
+      fetchpriority="high"
+    />
+  </head>
+  <body id="top">
+    <slot />
+  </body>
+</html>

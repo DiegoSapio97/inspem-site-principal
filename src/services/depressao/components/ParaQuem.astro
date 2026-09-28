@@ -1,0 +1,72 @@
+---
+const scenes = [
+  {
+    title: "No começo do dia",
+    desc: "Levantar, tomar banho ou começar uma tarefa parece exigir uma <strong>força que não vem.</strong>",
+    paths: [
+      "M5 4.5h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-13a2 2 0 0 1 2-2z",
+      "M8 2.5v4M16 2.5v4M3 9h18"
+    ]
+  },
+  {
+    title: "No que antes importava",
+    desc: "Atividades, encontros e interesses perderam a graça — e você foi <strong>se afastando.</strong>",
+    paths: [
+      "M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 6.7 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"
+    ]
+  },
+  {
+    title: "Na forma de se enxergar",
+    desc: "A mente transforma cansaço em culpa e repete que você <strong>falhou ou não é suficiente.</strong>",
+    paths: [
+      "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z",
+      "M8.5 10h.01M15.5 10h.01M8.5 16c1.8-2.1 5.2-2.1 7 0"
+    ]
+  },
+  {
+    title: "No corpo e na atenção",
+    desc: "Sono, apetite, energia ou concentração mudaram. Até <strong>decisões simples ficaram pesadas.</strong>",
+    paths: [
+      "M4 5.5A3.5 3.5 0 0 1 7.5 2h9A3.5 3.5 0 0 1 20 5.5v8a3.5 3.5 0 0 1-3.5 3.5H11l-4.5 4v-4A3.5 3.5 0 0 1 4 13.5z",
+      "M8.5 8.5h.01M15.5 8.5h.01M9 13h6"
+    ]
+  }
+];
+---
+
+<section id="para-quem" class="section">
+  <p class="eyebrow">Para quem é</p>
+  <h2>Talvez você reconheça <em>como seus dias mudaram.</em></h2>
+
+  <div class="scenes">
+    {scenes.map(s => (
+      <div class="scene">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            {s.paths.map(path => <path d={path} />)}
+          </svg>
+        </span>
+        <div>
+          <h3>{s.title}</h3>
+          <p set:html={s.desc} />
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="hope">
+    <p>A depressão reduz o mundo ao que pesa. <em>A terapia ajuda você a abrir espaço para escolhas.</em></p>
+  </div>
+
+  <div class="closing">
+    <p>Tristeza faz parte da vida. Quando o desânimo persiste e muda sua rotina, vale conversar com alguém.</p>
+    <p>A TCC ajuda você a compreender e modificar o ciclo entre <strong>pensamentos negativos, afastamento e desânimo.</strong></p>
+  </div>
+
+  <aside class="immediate-help" aria-labelledby="immediate-help-title">
+    <h3 id="immediate-help-title">Ajuda imediata</h3>
+    <p>Se houver risco imediato ou pensamentos de se machucar, procure ajuda agora.</p>
+    <p><strong><a href="tel:192">SAMU 192</a>, UPA ou pronto-socorro.</strong> Para apoio emocional, ligue <strong><a href="tel:188">188</a></strong>. O CVV atende 24 horas e sem custo.</p>
+    <p class="immediate-help-note">O WhatsApp da clínica não é um canal de emergência.</p>
+  </aside>
+</section>

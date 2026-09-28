@@ -1,0 +1,32 @@
+---
+import { siteConfig } from '../data/siteConfig';
+import Photo from './Photo.astro';
+import { photos } from '../data/photos';
+---
+
+<div class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Avaliação neuropsicológica para todas as idades · Porto Alegre</p>
+
+    <h1>Você conhece seus pontos fortes e suas dificuldades?<br /><em>A avaliação pode trazer clareza sobre como você funciona.</em></h1>
+
+    <p class="sub"><span class="pain">Sem compreender o que acontece, você tenta caminhos sem saber qual apoio faz sentido.</span> A avaliação reúne história, observações e testes para compreender como você funciona.</p>
+
+    <div class="cta-row">
+      <a class="btn-primary" href={siteConfig.contact.whatsappUrl} target="_blank" rel="noopener">Solicitar avaliação pelo WhatsApp</a>
+    </div>
+
+    <div class="social-proof">
+      <span class="stars">★★★★★</span>
+      <b>5,0 no Google</b>
+      <a href="#reconhecimento">veja o que falam sobre a clínica ↓</a>
+    </div>
+
+    <p class="note">Atendimento realizado por estagiários de Psicologia, sob supervisão de <strong>Simone Regina Sandri · CRP 07/2433</strong>. <a href="#equipe">Conheça a equipe e os registros no CRP.</a></p>
+  </div>
+
+  <figure class="hero-photo">
+    <Photo photo={photos.hero} />
+    <figcaption>{photos.hero.caption}</figcaption>
+  </figure>
+</div>

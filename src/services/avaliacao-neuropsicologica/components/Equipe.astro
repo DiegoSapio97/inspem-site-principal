@@ -1,0 +1,39 @@
+---
+import { siteConfig } from '../data/siteConfig';
+import Photo from './Photo.astro';
+import { photos } from '../data/photos';
+---
+
+<section id="equipe" class="section">
+  <p class="eyebrow">A equipe</p>
+  <h2>Uma equipe conduz o processo. <em>Simone supervisiona cada avaliação.</em></h2>
+  <p class="lead">Os estagiários de Psicologia realizam as entrevistas, aplicam os testes e participam da devolutiva. Simone acompanha a integração das informações e supervisiona o processo.</p>
+
+  <figure class="team-photo">
+    <Photo photo={photos.equipe} />
+    <figcaption>{photos.equipe.caption}</figcaption>
+  </figure>
+
+  <p class="sup-label">Supervisão das avaliações</p>
+  <div class="supervisors single">
+    {siteConfig.supervisors.map(sup => (
+      <div class="sup">
+        <Photo photo={sup.photo} />
+        <div>
+          <h3>{sup.name}</h3>
+          <p class="role">{sup.role}</p>
+          <ul>
+            {sup.qualifications.map(q => (
+              <li><strong>{q}</strong></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="model">
+    <h3>Quem conduz os encontros</h3>
+    <p>Você é atendido por <strong>estagiários de Psicologia sob supervisão</strong>. A equipe discute e integra as informações do processo antes da devolutiva e da emissão do laudo.</p>
+  </div>
+</section>

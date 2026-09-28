@@ -1,0 +1,27 @@
+---
+interface PhotoData {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+interface Props {
+  photo: PhotoData;
+  loading?: "lazy" | "eager";
+  fetchpriority?: "high" | "low" | "auto";
+  class?: string;
+}
+
+const { photo, loading, fetchpriority, class: className } = Astro.props;
+---
+
+<img
+  src={photo.src}
+  alt={photo.alt}
+  width={photo.width}
+  height={photo.height}
+  loading={loading}
+  fetchpriority={fetchpriority}
+  class={className}
+/>
