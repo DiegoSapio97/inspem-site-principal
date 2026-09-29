@@ -52,49 +52,40 @@ test('defines the five service destinations', async () => {
   assert.equal(new Set(services.map(({ href }) => href)).size, services.length);
 });
 
-test('generated privacy page accurately describes the initial site tracking setup', () => {
-  const privacyPath = new URL('../dist/politica-de-privacidade/index.html', import.meta.url);
-  assert.ok(existsSync(privacyPath), 'privacy page must be generated');
+// Snapshot of the supplied v1.4 document, normalized only for Markdown presentation.
+// These tests verify editorial fidelity, not legal accuracy or deployed consent tooling.
+const privacyHtml = () => readFileSync(new URL('../dist/politica-de-privacidade/index.html', import.meta.url), 'utf8');
+const plainText = (html) => html.replace(/<[^>]*>/g, ' ').replace(/&quot;/g, '"').replace(/&#39;|&#x27;/g, "'").replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/\s+/g, ' ').trim();
 
-  const html = readFileSync(privacyPath, 'utf8');
-  assert.match(
-    html,
-    /não utiliza Google Analytics, Google Ads, Meta Pixel ou cookies não essenciais/i,
-  );
-  assert.match(
-    html,
-    /não exibe (?:aviso|banner) de consentimento nem (?:oferece|disponibiliza) controle de preferências de cookies/i,
-  );
-  assert.doesNotMatch(html, /Dados de navegação coletados pelo Google Analytics/i);
-  assert.doesNotMatch(html, /utilizamos duas ferramentas[^:]*Google LLC/i);
-  assert.doesNotMatch(html, /A Google mantém infraestrutura fora do Brasil/i);
-  assert.doesNotMatch(html, /aviso de cookies oferece as opções/i);
-  assert.doesNotMatch(html, /"Preferências de cookies"/i);
-  assert.doesNotMatch(html, /Google Analytics<\/strong> e o <strong>Google Ads/i);
+test('privacy v1.4 preserves the entire supplied document body', () => {
+  const expected = JSON.parse(readFileSync(new URL('./fixtures/privacy-v1.4.json', import.meta.url), 'utf8'));
+  const html = privacyHtml();
+  const body = html.split('<div class="legal-body">')[1]?.split('<div class="legal-signature">')[0];
+  assert.ok(body);
+  assert.equal(plainText(body), expected.bodyText);
+  assert.match(html, /Última atualização: 29 de setembro de 2026/);
+  assert.match(html, /Versão 1\.4/);
+  assert.equal((body.match(/<h2 /g) || []).length, 12);
+  assert.doesNotMatch(body, /\\[#*<>\[\]]|\[INSERIR|placeholder|Tiago/i);
+  for (const id of ['cookies', 'direitos', 'encarregada', 'canal-de-privacidade']) assert.ok(html.includes(`id="${id}"`));
+  assert.match(body, /href="mailto:perceptio@perceptiopsico.com"/);
 });
 
-test('generated privacy page discloses WhatsApp triage data in international transfers', () => {
-  const privacyPath = new URL('../dist/politica-de-privacidade/index.html', import.meta.url);
-  assert.ok(existsSync(privacyPath), 'privacy page must be generated');
-
-  const html = readFileSync(privacyPath, 'utf8');
-  assert.match(
-    html,
-    /transferências[\s\S]*dados de contato e às informações que você escolhe compartilhar durante a triagem pelo WhatsApp/i,
-  );
-  assert.doesNotMatch(html, /Registros clínicos não são armazenados em servidores no exterior/i);
+test('privacy preserves revised clinical storage and retention disclosures', () => {
+  const text = plainText(privacyHtml());
+  for (const term of ['PsicoManager', 'PSICO GESTOR TECNOLOGIA LTDA.', 'Amazon Web Services (AWS) nos Estados Unidos', 'Mínimo de 20 anos a partir do último registro', 'Mínimo de 5 anos a partir do último registro', 'Não há eliminação automática do registro clínico em 30 dias.']) assert.ok(text.includes(term), term);
 });
 
-test('generated privacy page distinguishes LGPD response deadlines by right and format', () => {
-  const html = readFileSync(new URL('../dist/politica-de-privacidade/index.html', import.meta.url), 'utf8');
-  const rights = html.match(/<h2 id="direitos">[\s\S]*?(?=<h2 id="encarregada">)/)?.[0];
-  assert.ok(rights, 'privacy page must render the rights section');
-  const text = rights.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ');
-
-  assert.match(text, /confirmação de existência ou o acesso a dados pessoais[^.]*formato simplificado, imediatamente/i);
-  assert.match(text, /ou por meio de declaração clara e completa, em até 15 dias contados da data do requerimento/i);
-  assert.match(text, /demais direitos[^.]*prazos legais e regulamentares aplicáveis/i);
-  assert.doesNotMatch(text, /Responderemos em até 15 dias|prorrog|mediante justificativa/i);
+test('privacy rights and privacy channel match the supplied revision', () => {
+  const html = privacyHtml();
+  const text = plainText(html);
+  assert.match(text, /Responderemos em até 15 dias, podendo o prazo ser prorrogado mediante justificativa/);
+  assert.match(text, /9\. Canal de privacidade/);
+  assert.match(text, /A restrição à eliminação não afasta os demais direitos cabíveis/);
+  assert.doesNotMatch(text, /Encarregada:|Encarregada pelo tratamento/);
+  const terms = readFileSync(new URL('../dist/termos-de-uso/index.html', import.meta.url), 'utf8');
+  assert.match(terms, /Versão 1\.0/);
+  assert.match(terms, /2 de setembro de 2026/);
 });
 
 test('stylesheets do not use undefined custom properties', () => {
@@ -108,16 +99,20 @@ test('stylesheets do not use undefined custom properties', () => {
   assert.deepEqual(undefinedProperties, []);
 });
 
-test('generated privacy page limits visitor data to ordinary access logs', () => {
-  const privacyPath = new URL('../dist/politica-de-privacidade/index.html', import.meta.url);
-  assert.ok(existsSync(privacyPath), 'privacy page must be generated');
-
-  const html = readFileSync(privacyPath, 'utf8');
-  assert.match(
-    html,
-    /Endereço IP, data e hora do acesso, endereço solicitado, código de resposta, navegador \(user agent\) e página de origem \(referer\)/i,
-  );
-  assert.doesNotMatch(html, /tempo de permanência/i);
+test('all eight pages link to the shared policy without installing tracking', () => {
+  const routes = ['', 'ansiedade', 'depressao', 'tdah', 'avaliacao-neuropsicologica', 'sexualidade', 'politica-de-privacidade', 'termos-de-uso'];
+  const privacy = privacyHtml();
+  for (const route of routes) {
+    const html = readFileSync(new URL(`../dist/${route ? route + '/' : ''}index.html`, import.meta.url), 'utf8');
+    const footer = html.match(/<footer\b[^>]*class="site-footer"[\s\S]*?<\/footer>/)?.[0] || '';
+    assert.ok(footer.includes('href="/politica-de-privacidade"'), route || 'home');
+    for (const match of html.matchAll(/href="\/politica-de-privacidade(?:#([^" ]+))?"/g)) {
+      if (match[1]) assert.ok(privacy.includes(`id="${match[1]}"`), `${route}: ${match[1]}`);
+    }
+    assert.doesNotMatch(html, /<script[^>]*src="[^" ]*(?:googletagmanager|google-analytics|doubleclick|connect\.facebook)/i);
+    const scripts = [...html.matchAll(/<script\b[^>]*>[\s\S]*?<\/script>/g)].map(m => m[0]).join(' ');
+    assert.doesNotMatch(scripts, /gtag\s*\(|fbq\s*\(|GoogleAnalyticsObject|GTM-|G-[A-Z0-9]{6,}/);
+  }
 });
 
 test('builds an accessible service hub with secondary WhatsApp help', () => {

@@ -33,10 +33,12 @@ const { title, description, heading, eyebrow, updatedAt, version = '1.0' } = Ast
     <div class="legal-body"><slot /></div>
 
     <div class="legal-signature">
+      <slot name="signature">
       <strong>{siteConfig.legal.companyName} — INSPEM</strong>
       CNPJ {siteConfig.legal.cnpj} · CRP-PJ {siteConfig.legal.crpClinic.replace('CRP ', '')}<br />
       {siteConfig.location.address} — {siteConfig.location.complement} · {siteConfig.location.neighborhood} · {siteConfig.location.cep}<br />
       {siteConfig.contact.email} · {siteConfig.contact.phoneDisplay}
+      </slot>
     </div>
 
     <a class="legal-back" href="/">&larr; Voltar ao início</a>

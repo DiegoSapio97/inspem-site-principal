@@ -122,6 +122,20 @@
   background: var(--accent-strong);
 }
 
+.legal-body ol {
+  padding-left: 24px;
+  max-width: 68ch;
+}
+
+.legal-body ol li + li {
+  margin-top: 11px;
+}
+
+.legal-anchor {
+  display: block;
+  scroll-margin-top: 108px;
+}
+
 /* Destaque editorial para as declarações que a clínica assume */
 .legal-note {
   border-left: 3px solid var(--accent-strong);
