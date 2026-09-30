@@ -99,7 +99,7 @@ test('stylesheets do not use undefined custom properties', () => {
   assert.deepEqual(undefinedProperties, []);
 });
 
-test('all eight pages link to the shared policy without installing tracking', () => {
+test('all eight pages link to the shared policy without extra tracking', () => {
   const routes = ['', 'ansiedade', 'depressao', 'tdah', 'avaliacao-neuropsicologica', 'sexualidade', 'politica-de-privacidade', 'termos-de-uso'];
   const privacy = privacyHtml();
   for (const route of routes) {
@@ -111,7 +111,7 @@ test('all eight pages link to the shared policy without installing tracking', ()
     }
     assert.doesNotMatch(html, /<script[^>]*src="[^" ]*(?:googletagmanager|google-analytics|doubleclick|connect\.facebook)/i);
     const scripts = [...html.matchAll(/<script\b[^>]*>[\s\S]*?<\/script>/g)].map(m => m[0]).join(' ');
-    assert.doesNotMatch(scripts, /gtag\s*\(|fbq\s*\(|GoogleAnalyticsObject|GTM-|G-[A-Z0-9]{6,}/);
+    assert.doesNotMatch(scripts, /gtag\s*\(|fbq\s*\(|GoogleAnalyticsObject|GTM-(?!MCCB6QVW)|G-[A-Z0-9]{6,}/);
   }
 });
 

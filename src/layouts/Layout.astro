@@ -1,4 +1,6 @@
 ---
+import GoogleTagManagerHead from '../components/GoogleTagManagerHead.astro';
+import GoogleTagManagerBody from '../components/GoogleTagManagerBody.astro';
 import '@fontsource/newsreader/latin-500.css';
 import '@fontsource/newsreader/latin-500-italic.css';
 import '../styles/global.css';
@@ -18,6 +20,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <!doctype html>
 <html lang="pt-BR">
   <head>
+    <GoogleTagManagerHead />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
@@ -27,6 +30,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <title>{title}</title>
   </head>
   <body>
+    <GoogleTagManagerBody />
     <slot />
   </body>
 </html>

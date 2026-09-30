@@ -16,7 +16,10 @@ for (const slug of integrated) {
     assert.match(html, /href="\/"[^>]*>[^<]*Página inicial/);
     assert.match(html, /href="\/politica-de-privacidade"/);
     assert.match(html, /href="\/termos-de-uso"/);
-    assert.doesNotMatch(html, /<iframe|googletagmanager|google-analytics|connect.facebook.net/);
+    assert.doesNotMatch(html, /google-analytics|doubleclick|connect\.facebook\.net/);
+    const frames = [...html.matchAll(/<iframe\b[^>]*>/g)].map(m => m[0]);
+    assert.equal(frames.length, 1, 'only the approved GTM noscript iframe is allowed');
+    assert.match(frames[0], /src="https:\/\/www\.googletagmanager\.com\/ns\.html\?id=GTM-MCCB6QVW"/);
     assert.ok(html.includes(`/servicos/${slug}/assets/`), 'service assets must be namespaced');
     const ids = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]));
     for (const [, ref] of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) {

@@ -1,4 +1,7 @@
 ---
+import GoogleTagManagerHead from '../../../components/GoogleTagManagerHead.astro';
+import GoogleTagManagerBody from '../../../components/GoogleTagManagerBody.astro';
+
 interface Props {
   title?: string;
   description?: string;
@@ -21,10 +24,13 @@ const {
 } = Astro.props;
 ---
 
+
+
 <!doctype html>
 <!-- Direção visual: Clínica editorial noturna INSPEM; Newsreader + fonte do sistema, fundo grafite e violeta #A670DB. -->
 <html lang="pt-BR">
   <head>
+    <GoogleTagManagerHead />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
@@ -43,6 +49,7 @@ const {
     />
   </head>
   <body id="top">
+    <GoogleTagManagerBody />
     <slot />
   </body>
 </html>
