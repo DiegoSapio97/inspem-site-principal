@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../data/siteConfig';
+import { sexualidadeSupervisor as tiago } from '../../sexualidade/data/sexualidadeSupervisor';
 import Photo from './Photo.astro';
 import { photos } from '../data/photos';
 ---
@@ -32,6 +33,10 @@ import { photos } from '../data/photos';
             <span class="footer-detail">{sup.crp}</span>
           </div>
         ))}
+        <div class="footer-person">
+          <strong>{tiago.name}</strong>
+          <span class="footer-detail">{tiago.crp}</span>
+        </div>
       </div>
 
       <div class="footer-column footer-institutional">

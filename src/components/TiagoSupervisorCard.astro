@@ -1,0 +1,15 @@
+---
+import { sexualidadeSupervisor as supervisor } from '../services/sexualidade/data/sexualidadeSupervisor';
+import Photo from '../services/sexualidade/components/Photo.astro';
+---
+
+<div class="sup">
+  <Photo photo={supervisor.photo} loading="lazy" />
+  <div>
+    <h3>{supervisor.name}</h3>
+    <p class="role">{supervisor.supervisionArea}</p>
+    <p class="sup-meta">{supervisor.crp}</p>
+    <p class="sup-training">Especialização em:</p>
+    <ul>{supervisor.qualifications.map(q => <li><strong>{q}</strong></li>)}</ul>
+  </div>
+</div>

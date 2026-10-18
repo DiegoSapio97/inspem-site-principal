@@ -455,6 +455,7 @@ h2 {
     "eyebrow schedule"
     "title schedule"
     "intro facts"
+    ". couple"
     "closing evidence";
   column-gap: clamp(52px, 7vw, 96px);
   row-gap: 24px;
@@ -466,6 +467,7 @@ h2 {
 #como-funciona > .intro { grid-area: intro; margin-bottom: 0; }
 #como-funciona > .schedule { grid-area: schedule; }
 #como-funciona > .facts { grid-area: facts; }
+#como-funciona > .facts + .facts { grid-area: couple; }
 #como-funciona > .evidence { grid-area: evidence; }
 #como-funciona > .closing { grid-area: closing; }
 

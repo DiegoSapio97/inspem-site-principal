@@ -2,6 +2,7 @@
 import { siteConfig } from '../data/siteConfig';
 import Photo from './Photo.astro';
 import { photos } from '../data/photos';
+import TiagoSupervisorCard from '../../../components/TiagoSupervisorCard.astro';
 ---
 
 <section id="equipe" class="section">
@@ -21,7 +22,8 @@ import { photos } from '../data/photos';
         <Photo photo={sup.photo} />
         <div>
           <h3>{sup.name}</h3>
-          <p class="role">{sup.role}</p>
+          <p class="role">{sup.supervisionArea}</p>
+          <p class="sup-meta">{sup.crp}</p>
           <ul>
             {sup.qualifications.map(q => (
               <li><strong>{q}</strong></li>
@@ -30,6 +32,7 @@ import { photos } from '../data/photos';
         </div>
       </div>
     ))}
+    <TiagoSupervisorCard />
   </div>
 
   <div class="model">

@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../data/siteConfig';
+import { sexualidadeSupervisor as tiago } from '../../sexualidade/data/sexualidadeSupervisor';
 import Photo from './Photo.astro';
 import { photos } from '../data/photos';
 ---
@@ -25,13 +26,17 @@ import { photos } from '../data/photos';
       </div>
 
       <div class="footer-column">
-        <h2 class="footer-column-title">Psicólogas</h2>
+        <h2 class="footer-column-title">Psicólogos</h2>
         {siteConfig.supervisors.map(sup => (
           <div class="footer-person">
             <strong>{sup.fullName}</strong>
             <span class="footer-detail">{sup.crp}</span>
           </div>
         ))}
+        <div class="footer-person">
+          <strong>{tiago.name}</strong>
+          <span class="footer-detail">{tiago.crp}</span>
+        </div>
       </div>
 
       <div class="footer-column footer-institutional">

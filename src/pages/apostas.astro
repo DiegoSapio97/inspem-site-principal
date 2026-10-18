@@ -1,0 +1,68 @@
+---
+import Layout from '../services/apostas/layouts/Layout.astro';
+import Header from '../services/ansiedade/components/Header.astro';
+import Footer from '../services/ansiedade/components/Footer.astro';
+import Equipe from '../services/ansiedade/components/Equipe.astro';
+import Investimento from '../services/ansiedade/components/Investimento.astro';
+import Photo from '../services/ansiedade/components/Photo.astro';
+import WhatsAppButton from '../services/ansiedade/components/WhatsAppButton.astro';
+import ServiceNavigation from '../components/ServiceNavigation.astro';
+import ComoFunciona from '../services/apostas/components/ComoFunciona.astro';
+import Localizacao from '../services/apostas/components/Localizacao.astro';
+import Faq from '../services/apostas/components/Faq.astro';
+import { photos } from '../services/ansiedade/data/photos';
+const scenes = [
+ { title: 'Você tenta parar, mas volta a apostar', desc: 'Você decide que vai parar ou gastar menos, mas acaba apostando por mais tempo ou com mais dinheiro do que pretendia.', path: 'M20 7v5h-5M4 17v-5h5M6 7a7 7 0 0 1 12-1l2 6M4 12l2 6a7 7 0 0 0 12-1' },
+ { title: 'Você aposta para recuperar o que perdeu', desc: 'Depois de perder dinheiro, você volta a apostar na esperança de recuperar o valor e resolver o prejuízo.', path: 'M4 8h11a5 5 0 0 1 0 10h-3M8 4L4 8l4 4' },
+ { title: 'Você esconde os gastos e acumula contas', desc: 'Você evita contar quanto apostou, pede dinheiro emprestado ou deixa contas importantes para depois.', path: 'M6 3h12v18l-3-2-3 2-3-2-3 2V3M9 7h6M9 11h6M9 15h3' },
+ { title: 'As apostas ocupam o espaço de outras atividades', desc: 'Você pensa nas apostas durante o trabalho, deixa compromissos de lado ou percebe mais conflitos nas suas relações.', path: 'M8 3v4M16 3v4M4 10h16M4 5h16v16H4V5M8 14l8 4M16 14l-8 4' }
+];
+const steps = [
+ {title:'Você chama no WhatsApp',desc:'Envie uma mensagem dizendo que procura atendimento para problemas com apostas.'},
+ {title:'A equipe conversa sobre sua demanda',desc:'A equipe busca entender o que você está vivendo, avalia se a clínica atende às suas necessidades e explica os valores e o funcionamento do serviço.'},
+ {title:'Você combina o início do atendimento',desc:'Se o serviço for adequado ao seu caso e você quiser seguir, a equipe combina o agendamento da primeira sessão.'}
+];
+---
+<Layout title="Problemas com apostas: atendimento psicológico | INSPEM" description="Atendimento psicológico para adultos com problemas com bets e cassinos on-line. Conheça a INSPEM, com atendimento on-line e presencial em Porto Alegre.">
+ <Header /><ServiceNavigation current="apostas" />
+ <main>
+  <div class="hero">
+   <div class="hero-copy">
+    <p class="eyebrow">Psicoterapia para adultos · On-line e presencial em Porto Alegre</p>
+    <h1>As apostas estão prejudicando sua vida? <em>Você pode buscar ajuda para mudar essa relação.</em></h1>
+    <p class="sub"><span class="pain">Você tenta parar, mas volta a apostar.</span> A preocupação com o dinheiro aumenta, e falar sobre o que está acontecendo pode ser difícil. Na INSPEM, você pode conversar sobre essas dificuldades e avaliar qual acompanhamento faz sentido para o seu momento.</p>
+    <div class="cta-row"><WhatsAppButton text="Quero conversar sobre meu atendimento" showIcon={false} /></div>
+    <div class="social-proof"><a href="#reconhecimento">Conheça as avaliações sobre a clínica ↓</a></div>
+    <p class="note">Atendimento por estagiários de Psicologia, com supervisão clínica semanal. <a href="#equipe">Conheça a equipe e os registros no CRP.</a></p>
+   </div>
+   <figure class="hero-photo"><Photo photo={photos.hero} /><figcaption>{photos.hero.caption}</figcaption></figure>
+  </div>
+  <section id="para-quem" class="section">
+   <p class="eyebrow">Para quem é</p><h2>Você reconhece alguma destas situações <em>na sua rotina?</em></h2>
+   <div class="scenes">{scenes.map(s=><div class="scene"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d={s.path} /></svg></span><div><h3>{s.title}</h3><p>{s.desc}</p></div></div>)}</div>
+   <div class="hope"><p>Você não precisa esperar que os prejuízos aumentem <em>para procurar uma avaliação.</em></p></div>
+   <div class="closing"><p>Os problemas com apostas podem afetar o dinheiro, a saúde e os relacionamentos.</p><p>Esses exemplos ajudam a reconhecer dificuldades, mas não estabelecem um diagnóstico.</p></div>
+  </section>
+  <ComoFunciona />
+  <section id="como-comecar" class="section">
+   <p class="eyebrow">Como começar</p><h2>Você pode começar <em>com uma mensagem.</em></h2>
+   <p class="lead">Entre em contato pelo WhatsApp para solicitar uma triagem. Você não precisa preparar um relato completo antes dessa conversa.</p>
+   <div class="steps">{steps.map((step,i)=><div class="step"><span class="n">{i+1}</span><h3>{step.title}</h3><p>{step.desc}</p></div>)}</div>
+   <div class="cta-wrap"><WhatsAppButton text="Quero solicitar uma triagem" /></div>
+  </section>
+  <Investimento /><Equipe />
+  <section id="reconhecimento" class="section">
+   <p class="eyebrow">Reconhecimento</p><h2>Conheça as avaliações <em>sobre a INSPEM.</em></h2>
+   <p class="lead">As avaliações abaixo se referem à experiência com a clínica. Elas não representam resultados específicos do atendimento para problemas com apostas.</p>
+   <div class="quotes"><blockquote class="quote"><p>Clínica parceira maravilhosa! Profissionais sérios e comprometidos.</p><footer><b>C.T.</b> · avaliação publicada no Google</footer></blockquote><blockquote class="quote"><p>Ótimo atendimento, com muito profissionalismo.</p><footer><b>M.P.</b> · avaliação publicada no Google</footer></blockquote></div>
+  </section>
+  <Localizacao /><Faq />
+  <section id="comece"><div class="wrap"><div class="cta">
+   <h2>Você pode conversar sobre <em>o que está acontecendo com as apostas.</em></h2>
+   <p class="sub">Entre em contato com a INSPEM para solicitar uma triagem e entender se o atendimento é adequado ao seu momento.</p>
+   <WhatsAppButton text="Quero conversar com a equipe" target="_blank" rel="noopener" />
+   <p class="micro">Este canal é destinado a informações e agendamento. Se houver risco imediato à sua vida, ligue para o SAMU (192) ou procure uma UPA ou pronto-socorro.</p>
+  </div></div></section>
+ </main>
+ <Footer />
+</Layout>

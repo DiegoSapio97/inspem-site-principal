@@ -3,10 +3,10 @@ import { readFileSync, readdirSync } from 'node:fs';
 import test from 'node:test';
 import { runInNewContext } from 'node:vm';
 
-const routes = ['', 'ansiedade', 'depressao', 'tdah', 'avaliacao-neuropsicologica', 'sexualidade', 'politica-de-privacidade', 'termos-de-uso'];
+const routes = ['', 'ansiedade', 'apostas', 'depressao', 'tdah', 'avaliacao-neuropsicologica', 'sexualidade', 'politica-de-privacidade', 'termos-de-uso'];
 const dist = new URL('../dist/', import.meta.url);
 
-test('build covers exactly the eight approved pages', () => {
+test('build covers exactly the nine approved pages', () => {
   const pages = readdirSync(dist, { recursive: true }).filter(p => p.endsWith('.html')).map(p => p.replaceAll('\\', '/')).sort();
   assert.deepEqual(pages, routes.map(route => `${route ? route + '/' : ''}index.html`).sort());
 });

@@ -4,10 +4,65 @@
   min-height: 32px;
 }
 
+/* Group role and scope; keep credentials secondary to the purple role. */
+#equipe .sup .role {
+  margin: 8px 0 6px;
+  line-height: 1.55;
+  color: var(--accent);
+}
+
+#equipe .sup .sup-meta {
+  margin: 0 0 20px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+#equipe .sup .sup-training {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
 /* Keep the original decorative glow within the mobile image width. */
 @media (max-width: 480px) {
-  .hero-photo::before { inset: 10% 0 -5% 8%; }
+  body .hero-photo::before { inset: 10% 0 -5% 8%; }
   header .logo { flex: 1 1 0; min-width: 0; }
   header .logo img { width: 100%; max-width: 230px; }
   header nav { flex: 0 0 auto; }
+}
+
+/* Keep these overrides effective when Astro hoists shared CSS before page CSS. */
+#localizacao .gallery-hero picture {
+  display: block;
+}
+
+#localizacao .gallery-hero img,
+#localizacao .gallery-track img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+#localizacao .gallery-track {
+  align-items: flex-start;
+}
+
+#localizacao .gallery-hero figcaption,
+#localizacao .gallery-track figcaption {
+  position: static;
+  inset: auto;
+  margin: 0;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 0;
+  background: var(--bg-elevated);
+  color: var(--muted);
+  backdrop-filter: none;
 }

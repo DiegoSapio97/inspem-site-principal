@@ -1,0 +1,57 @@
+---
+import { siteConfig } from '../../ansiedade/data/siteConfig';
+
+const faqs = [
+{"question": "O que é ludopatia?", "answers": ["Ludopatia é um termo usado para se referir ao transtorno do jogo. Nesse quadro, a pessoa tem dificuldade persistente para controlar as apostas e continua apostando apesar de prejuízos importantes. A avaliação profissional é necessária para identificar o transtorno. Você também pode buscar cuidado por problemas com apostas sem preencher os critérios desse diagnóstico."]},
+{"question": "Preciso ter um diagnóstico ou uma dívida grande para procurar ajuda?", "answers": ["Não. A dificuldade para parar, o sofrimento emocional e os prejuízos na rotina também merecem atenção. O valor perdido não é o único aspecto considerado na avaliação."]},
+{"question": "Já tentei parar e voltei a apostar. Ainda posso procurar atendimento?", "answers": ["Sim. Voltar a apostar não impede que você procure ajuda. O acompanhamento pode ajudar a compreender o que aconteceu e a planejar estratégias para lidar com situações que aumentam a vontade de apostar."]},
+{"question": "Preciso saber o que dizer na primeira conversa?", "answers": ["Não. Você pode começar contando o que mais preocupa você hoje. A equipe faz perguntas para entender sua demanda e explicar os próximos passos."]},
+{"question": "O atendimento é sigiloso?", "answers": ["O atendimento segue as regras éticas de sigilo profissional. No início do acompanhamento, a equipe explica como as informações são tratadas, como funciona a supervisão clínica e quais são os limites do sigilo."]},
+{"question": "Quanto tempo dura o acompanhamento?", "answers": ["A duração depende das suas necessidades e da avaliação ao longo do processo. Os objetivos e o plano de cuidado são revistos com você. Não há um prazo único que possa ser prometido antes dessa avaliação."]},
+{"question": "Quanto custa e quanto tempo dura cada atendimento?", "answers": ["Cada atendimento custa R$ 95 e dura 50 minutos."]},
+  {
+    id: "faq-plano-saude",
+    className: "faq-question-card",
+    name: "faq-servicos",
+    question: "A clínica atende por plano de saúde?",
+    answers: [
+      "Não. Os atendimentos são particulares. Alguns planos oferecem reembolso integral ou parcial para atendimentos realizados fora da rede credenciada. Consulte sua operadora antes de agendar para confirmar as regras, o valor do reembolso e os documentos necessários. Emitimos nota fiscal para a solicitação."
+    ]
+  },
+  {
+    id: "faq-imposto-renda",
+    className: "faq-question-card",
+    name: "faq-servicos",
+    question: "O atendimento pode ser deduzido no Imposto de Renda?",
+    answers: [
+      "Despesas com psicólogo podem ser declaradas como despesas médicas, conforme as regras da Receita Federal. Se houver reembolso do plano, somente a parte não reembolsada pode ser dedutível. A redução efetiva do imposto depende da situação tributária de cada pessoa. Guarde a nota fiscal e, quando houver, o comprovante de reembolso."
+    ]
+  },
+];
+---
+
+<section id="faq">
+  <div class="wrap">
+    <p class="eyebrow">Dúvidas frequentes</p>
+    <h2>O que quase todo mundo <em>pergunta antes de começar</em></h2>
+    <p class="faq-lead">Se a sua dúvida não estiver aqui, ela pode ser respondida na triagem — sem compromisso.</p>
+
+    <div class="faq">
+      {faqs.map(faq => (
+        <details id={faq.id} class={faq.className} name={faq.name}>
+          <summary>
+            {faq.question}
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </summary>
+          <div class="answer">
+            {faq.answers.map(ans => (
+              <p set:html={ans} />
+            ))}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

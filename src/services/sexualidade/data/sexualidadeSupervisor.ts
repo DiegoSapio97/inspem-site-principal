@@ -1,4 +1,7 @@
+import { supervisorAreas } from '../../../data/supervisorAreas';
+
 export const sexualidadeSupervisor = {
+  supervisionArea: supervisorAreas.tiago,
   name: 'Tiago Ribeiro',
   role: 'Supervisor responsável',
   crp: 'CRP: 07/35.690',
@@ -8,7 +11,7 @@ export const sexualidadeSupervisor = {
     'Saúde mental com ênfase em dependência química',
   ],
   photo: {
-    src: '/servicos/sexualidade/assets/sexualidade/tiago-ribeiro.webp',
+    src: '/assets/tiago-retrato.avif',
     alt: 'Tiago Ribeiro, supervisor responsável pelo atendimento de sexualidade e relacionamentos.',
     width: 450,
     height: 570,

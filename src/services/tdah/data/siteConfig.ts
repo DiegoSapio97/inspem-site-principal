@@ -1,4 +1,5 @@
 import { photos } from './photos';
+import { supervisorAreas } from '../../../data/supervisorAreas';
 
 export const siteConfig = {
   title: "INSPEM — Psicoterapia em TCC · Bom Fim · Porto Alegre",
@@ -52,6 +53,7 @@ export const siteConfig = {
       role: "Supervisora clínica · CRP 07/2433",
       crp: "CRP 07/2433",
       photo: photos.simone,
+      supervisionArea: supervisorAreas.simone,
       qualifications: [
         "Mestrado em Psicologia",
         "Responsável técnica da clínica"
@@ -63,6 +65,7 @@ export const siteConfig = {
       role: "Supervisora clínica · fundadora",
       crp: "CRP 07/18623",
       photo: photos.ingrid,
+      supervisionArea: supervisorAreas.ingrid,
       qualifications: [
         "Doutorado em Saúde Coletiva",
         "Especialização em prática baseada em evidências",

@@ -32,7 +32,7 @@ for (const slug of integrated) {
     assert.ok((html.match(/<img\b/g) || []).length >= 5, 'real service content must include original imagery');
     assert.ok(html.includes('id="faq"') && html.includes('id="localizacao"'), 'original sections must remain');
     if (slug === 'sexualidade') {
-      for (const copy of ['Você pode se cobrar menos e se aceitar mais', 'consigo mesmo e com seu relacionamento.', 'Desempenho sexual', 'Autoaceitação LGBT+', 'Tiago Ribeiro', '07/35.690', '50 minutos', 'R$ 95', 'não por pessoa']) {
+      for (const copy of ['Você pode se cobrar menos e se sentir mais à vontade', 'consigo mesmo e com seus relacionamentos.', 'Desempenho e sexualidade', 'Vivências LGBT+', 'Masculinidades', 'Tiago Ribeiro', '07/35.690', '50 minutos', 'R$ 95', 'não por pessoa']) {
         assert.ok(html.includes(copy), `approved content must remain: ${copy}`);
       }
       const home = readFileSync(new URL('index.html', dist), 'utf8');

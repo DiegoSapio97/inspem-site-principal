@@ -1,4 +1,5 @@
 import { photos } from './photos';
+import { supervisorAreas } from '../../../data/supervisorAreas';
 
 export const siteConfig = {
   title: "INSPEM — Avaliação Neuropsicológica em Porto Alegre",
@@ -40,6 +41,7 @@ export const siteConfig = {
       role: "Supervisora das avaliações · CRP 07/2433",
       crp: "CRP 07/2433",
       photo: photos.simone,
+      supervisionArea: supervisorAreas.simone,
       qualifications: [
         "Mestrado em Psicologia do Desenvolvimento pela UFRGS",
         "Graduação em Psicologia pela PUCRS",

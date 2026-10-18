@@ -1,7 +1,4 @@
-/**
- * Fotos do site. Arquivos em public/servicos/depressao/assets/ (nomes com hash do repositório).
- * Para trocar uma imagem: substitua o arquivo com o mesmo nome.
- */
+/** Fotos fornecidas, compartilhadas em public/assets; logo específico do serviço. */
 export const photos = {
   logo: {
     src: "/servicos/depressao/assets/logo-inspem-header_a08984b5.webp",
@@ -10,65 +7,66 @@ export const photos = {
     height: 120,
   },
   hero: {
-    src: "/servicos/depressao/assets/ingrid-consultorio_01f79ed7.webp",
+    src: "/assets/ingrid-porta-hero.avif",
     alt: "Ingrid Francke na entrada do consultório do INSPEM, no bairro Bom Fim, em Porto Alegre",
     caption: "Ingrid Francke na entrada do consultório, Bom Fim",
-    width: 1100,
-    height: 1400,
+    width: 960,
+    height: 1260,
   },
   equipe: {
-    src: "/servicos/depressao/assets/tiago_alto_fc1b84.webp",
-    alt: "Equipe da INSPEM: supervisoras e estagiários no consultório, no Bom Fim",
-    caption: "A equipe da INSPEM no consultório, Bom Fim — Porto Alegre",
-    width: 1391,
-    height: 1131,
+    src: "/assets/equipe-inspem.avif",
+    alt: "Equipe INSPEM",
+    caption: "Equipe INSPEM",
+    width: 686,
+    height: 558,
   },
   simone: {
-    src: "/servicos/depressao/assets/supervisora-simone_059072ac.webp",
+    src: "/assets/simone-retrato.avif",
     alt: "Simone, supervisora clínica da INSPEM",
-    width: 250,
-    height: 315,
+    width: 248,
+    height: 312,
   },
   ingrid: {
-    src: "/servicos/depressao/assets/supervisora-ingrid_369c6147.webp",
+    src: "/assets/ingrid-retrato.avif",
     alt: "Ingrid Francke, supervisora clínica da INSPEM",
-    width: 250,
-    height: 315,
+    width: 248,
+    height: 312,
   },
   fachada: {
-    src: "/servicos/depressao/assets/fachada-baltimore_dbfddbea.webp",
-    alt: "Fachada do Edifício Baltimore à noite, na Av. Osvaldo Aranha, 1022",
+    src: "/assets/fachada-inspem-desktop.avif",
+    alt: "Fachada do Edifício Baltimore, na Av. Osvaldo Aranha, 1022",
     caption: "Edifício Baltimore — fachada e acesso",
-    width: 1600,
-    height: 480,
+    width: 1216,
+    height: 380,
+    mobile: { src: "/assets/fachada-inspem-mobile.avif", width: 800, height: 350 },
     wide: true,
   },
   espera: {
-    src: "/servicos/depressao/assets/consultorio-sala-espera_1698daab.webp",
+    src: "/assets/sala-espera-inspem.avif",
     alt: "Sala de espera da clínica INSPEM",
     caption: "Sala de espera",
-    width: 1000,
-    height: 480,
+    width: 780,
+    height: 1040,
     wide: false,
   },
   entrada: {
-    src: "/servicos/depressao/assets/consultorio-entrada_79d99e1f.webp",
+    src: "/assets/entrada-inspem.avif",
     alt: "Entrada do consultório INSPEM",
     caption: "Entrada do consultório",
-    width: 1200,
-    height: 480,
+    width: 900,
+    height: 1200,
     wide: false,
   },
   atendimento: {
-    src: "/servicos/depressao/assets/consultorio-sala-atendimento_bf036d93.webp",
+    src: "/assets/consultorio-inspem.avif",
     alt: "Sala de atendimento da clínica INSPEM",
     caption: "Sala de atendimento",
     width: 1200,
-    height: 480,
+    height: 1600,
     wide: true,
   },
   salaEquipe: {
-    src: "/servicos/depressao/assets/consultorio-sala-equipe_8dd520a7.webp",
+    src: "/assets/sala-equipe-inspem.avif",
     alt: "Sala da equipe da clínica INSPEM",
     caption: "Sala da equipe",
     width: 800,
@@ -80,8 +78,7 @@ export const photos = {
 export const galleryHero = photos.fachada;
 
 export const galleryRooms = [
-  photos.atendimento,
   photos.espera,
   photos.entrada,
-  photos.salaEquipe,
+
 ];

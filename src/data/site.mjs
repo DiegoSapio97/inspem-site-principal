@@ -39,6 +39,14 @@ export const services = [
     href: '/sexualidade',
     linkLabel: 'Conhecer o atendimento em sexualidade',
   },
+  {
+    number: '06',
+    title: 'Vício em apostas',
+    description:
+      'Atendimento psicológico para adultos com problemas com bets e cassinos on-line, presencial ou on-line.',
+    href: '/apostas',
+    linkLabel: 'Conhecer o atendimento para problemas com apostas',
+  },
 ];
 
 export const contact = {

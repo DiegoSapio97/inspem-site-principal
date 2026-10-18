@@ -10,9 +10,10 @@ import Equipe from '../components/sexualidade/Equipe.astro';
 import Localizacao from '../components/sexualidade/Localizacao.astro';
 import Reconhecimento from '../components/Reconhecimento.astro';
 const scenes = [
-  { title: 'Desempenho sexual', desc: 'Medo de falhar, dificuldades de ereção e ejaculação antes do desejado.', path: 'M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 6.7 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z' },
-  { title: 'Relacionamentos', desc: 'Conflitos, dificuldade para conversar e falta de intimidade.', path: 'M20 12a8 8 0 1 0-15.2 3.5L4 20l4.6-.8A8 8 0 0 0 20 12z M9 11.5h.01M12.5 11.5h.01M16 11.5h.01' },
-  { title: 'Autoaceitação LGBT+', desc: 'Vergonha, medo de rejeição e sofrimento diante do preconceito.', path: 'M12 3l8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3z M8 12l3 3 5-6' }
+  { title: 'Desempenho e sexualidade', desc: 'Ansiedade, medo de falhar, dificuldades de ereção, ejaculação, desejo e outras questões que podem interferir na vida sexual.', path: 'M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 6.7 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z' },
+  { title: 'Relacionamentos e intimidade', desc: 'Conflitos, dificuldade para se comunicar, distanciamento, inseguranças e desafios na construção da intimidade.', path: 'M20 12a8 8 0 1 0-15.2 3.5L4 20l4.6-.8A8 8 0 0 0 20 12z M9 11.5h.01M12.5 11.5h.01M16 11.5h.01' },
+  { title: 'Vivências LGBT+', desc: 'Vergonha, medo de rejeição, conflitos com a própria identidade e impactos do preconceito.', path: 'M12 3l8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3z M8 12l3 3 5-6' },
+  { title: 'Masculinidades', desc: 'Pressões, expectativas, inseguranças e dificuldades relacionadas às formas de viver e expressar a masculinidade.', path: 'M14 3h7v7M21 3l-7 7M15 14a6 6 0 1 1-12 0 6 6 0 0 1 12 0z' }
 ];
 const steps = [
   { title: 'Você solicita uma triagem', desc: 'Entre em contato pelo WhatsApp. Você pode dizer apenas que tem interesse no atendimento individual ou de casal.' },
@@ -39,8 +40,8 @@ const faqs = [
   <div class="hero">
     <div class="hero-copy">
       <p class="eyebrow">Sexualidade e relacionamentos · Porto Alegre</p>
-      <h1>Você pode se cobrar menos e se aceitar mais <em>consigo mesmo e com seu relacionamento.</em></h1>
-      <p class="sub">Dificuldades no sexo, conflitos na relação ou insegurança para viver sua sexualidade como homem LGBT+? Aqui, você encontra espaço para falar.</p>
+      <h1>Você pode se cobrar menos e se sentir mais à vontade <em>consigo mesmo e com seus relacionamentos.</em></h1>
+      <p class="sub">Dificuldades no sexo, conflitos na relação ou inseguranças para viver sua sexualidade? Aqui, você encontra um espaço para falar sobre isso com acolhimento e sem julgamentos.</p>
       <div class="cta-row"><a class="btn-primary" href={siteConfig.contact.whatsappUrl}>Solicitar triagem pelo WhatsApp</a></div>
 
       <p class="note">Atendimento por estagiários de Psicologia, com supervisão semanal de Tiago Ribeiro. <a href="#equipe">Conheça o supervisor responsável e seu registro no CRP.</a></p>
@@ -50,9 +51,9 @@ const faqs = [
   <section id="para-quem" class="section">
     <p class="eyebrow">Para quem é</p>
     <h2>Podemos ajudar com</h2>
-    <p class="lead">Na psicoterapia individual ou de casal, você encontra apoio para lidar com estas questões.</p>
+    <p class="lead">Na psicoterapia individual ou de casal, você encontra um espaço seguro para compreender e lidar com questões que podem afetar sua vida, seus relacionamentos e sua sexualidade. Tais como:</p>
     <div class="scenes">{scenes.map(s => <div class="scene"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d={s.path}/></svg></span><div><h3>{s.title}</h3><p>{s.desc}</p></div></div>)}</div>
-    <div class="closing"><p>Esta página conversa principalmente com homens, mas o atendimento não é exclusivo para eles.</p></div>
+    <div class="closing"><p>Embora o conteúdo tenha foco principal nas experiências masculinas, o atendimento não é exclusivo para homens.</p></div>
   </section>
   <section id="como-funciona" class="section">
     <p class="eyebrow">Método e acompanhamento</p>

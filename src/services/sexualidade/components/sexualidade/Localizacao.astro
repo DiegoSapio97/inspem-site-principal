@@ -1,5 +1,6 @@
 ---
 import ExternalMapLink from '../../../../components/ExternalMapLink.astro';
+import ConsultationRooms from '../../../../components/ConsultationRooms.astro';
 import { siteConfig } from '../../data/siteConfig';
 import Photo from '../Photo.astro';
 import { galleryHero, galleryRooms } from '../../data/photos';
@@ -25,8 +26,9 @@ const accessCards = [
   <div class="access">{accessCards.map(card => <div class="acc-card"><svg viewBox="0 0 24 24" aria-hidden="true">{card.rect && <rect x="4" y="3" width="16" height="14" rx="2.5"/>}<path d={card.path}/>{card.circle && <circle cx="12" cy="12" r="9"/>}</svg><h3>{card.title}</h3><p set:html={card.desc}/></div>)}</div>
   <p class="gallery-label">Conheça o espaço de atendimento</p>
   <figure class="gallery-hero"><Photo photo={galleryHero} loading="lazy"/><figcaption>{galleryHero.caption}</figcaption></figure>
-  <div class="gallery-strip" role="region" aria-roledescription="carrossel" aria-label="Fotos das salas">
-    <div class="gallery-toolbar"><p class="gallery-hint">Deslize para o lado para ver as salas</p><div class="gallery-nav">
+  <ConsultationRooms />
+  <div class="gallery-strip" role="region" aria-roledescription="carrossel" aria-label="Sala de espera e entrada">
+    <div class="gallery-toolbar"><p class="gallery-hint">Deslize para ver a sala de espera e a entrada</p><div class="gallery-nav">
       <button type="button" class="gallery-nav-btn" data-dir="-1" aria-label="Foto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
       <button type="button" class="gallery-nav-btn" data-dir="1" aria-label="Próxima foto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
     </div></div>

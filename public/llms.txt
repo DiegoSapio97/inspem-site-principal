@@ -1,0 +1,32 @@
+# INSPEM — Instituto Perceptio de Psicologia Empírica
+
+> Clínica de psicologia no bairro Bom Fim, em Porto Alegre, RS, Brasil. Oferece psicoterapia presencial e avaliação neuropsicológica, com supervisão profissional e prática baseada em evidências. Site em português brasileiro.
+
+Endereço: Av. Osvaldo Aranha, 1022, sala 1610, Bom Fim, Porto Alegre, RS, CEP 90035-191. Razão social: PERCEPTIO PSICOLOGIA LTDA. CNPJ: 45.276.135/0001-12. Registro da pessoa jurídica: CRP 07/01984.
+
+Este é um mapa das páginas públicas do site. Os links apontam para páginas HTML e suas seções. Consulte a página do serviço para conferir público atendido, modalidade, equipe, valores, etapas e perguntas frequentes. As informações vigentes nas páginas são a referência; confirme disponibilidade e condições com a equipe.
+
+O contato inicial acontece pelo WhatsApp informado no site. Solicitar informações ou triagem não equivale a ter uma consulta agendada: a equipe verifica a demanda e combina o horário. Os atendimentos apresentados são presenciais. O conteúdo do site é informativo e não constitui diagnóstico ou atendimento psicológico. O WhatsApp da clínica não é um canal de emergência.
+
+## Clínica e serviços
+
+- [Página inicial](https://inspem.com.br/): Apresentação da clínica, visão geral dos serviços, abordagem de trabalho e endereço.
+- [Ansiedade](https://inspem.com.br/ansiedade/): Psicoterapia em Terapia Cognitivo-Comportamental (TCC) para adultos; funcionamento, supervisão, valores e orientações para solicitar triagem.
+- [Depressão](https://inspem.com.br/depressao/): Psicoterapia para dificuldades relacionadas à depressão; funcionamento, equipe, valores, perguntas frequentes e informações sobre ajuda imediata.
+- [TDAH](https://inspem.com.br/tdah/): Psicoterapia em TCC para adultos com diagnóstico ou suspeita de TDAH; atenção, organização, rotina e acompanhamento. Distingue-se do serviço de avaliação neuropsicológica.
+- [Avaliação neuropsicológica](https://inspem.com.br/avaliacao-neuropsicologica/): Avaliação presencial para diferentes idades; investigação do funcionamento cognitivo, emocional e comportamental, etapas, supervisão, devolutiva e laudo.
+- [Sexualidade e relacionamentos](https://inspem.com.br/sexualidade/): Psicoterapia presencial individual e de casal; desempenho e sexualidade, relacionamentos e intimidade, vivências LGBT+ e masculinidades. Embora o conteúdo tenha foco principal nas experiências masculinas, o atendimento não é exclusivo para homens.
+
+## Navegação por tarefa
+
+- [Conhecer os serviços disponíveis](https://inspem.com.br/#servicos): Comparar os cinco serviços e acessar suas páginas.
+- [Entender como iniciar a psicoterapia](https://inspem.com.br/ansiedade/#como-comecar): Contato, conversa inicial e combinação da primeira sessão.
+- [Entender as etapas da avaliação neuropsicológica](https://inspem.com.br/avaliacao-neuropsicologica/#processo): Entrevista, testes e apresentação dos resultados.
+- [Consultar o atendimento individual ou de casal](https://inspem.com.br/sexualidade/#faq): Perguntas frequentes sobre público, modalidade e sessões.
+- [Consultar a localização](https://inspem.com.br/ansiedade/#localizacao): Endereço e orientações de acesso ao consultório.
+- [Contato pelo WhatsApp](https://wa.me/5551997004823): Canal externo para informações, triagem e solicitação de agendamento com a equipe; telefone +55 51 99700-4823.
+
+## Documentos institucionais
+
+- [Política de Privacidade](https://inspem.com.br/politica-de-privacidade/): Informações sobre dados pessoais, contato inicial, triagem, cookies e canal de privacidade.
+- [Termos de Uso](https://inspem.com.br/termos-de-uso/): Finalidade informativa do site, condições de uso e limites dos canais de contato.

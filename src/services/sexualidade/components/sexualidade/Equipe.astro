@@ -10,7 +10,7 @@ import { sexualidadePhotos } from '../../data/sexualidadePhotos';
   <figure class="team-photo"><Photo photo={sexualidadePhotos.equipe} loading="lazy" /><figcaption>{sexualidadePhotos.equipe.caption}</figcaption></figure>
   <p class="sup-label">Quem supervisiona o seu caso</p>
   <div class="supervisors">
-    <div class="sup"><Photo photo={supervisor.photo} loading="lazy" /><div><h3>{supervisor.name}</h3><p class="role">{supervisor.role} · {supervisor.crp}</p><p>Especialização em:</p><ul>{supervisor.qualifications.map(q => <li><strong>{q}</strong></li>)}</ul></div></div>
+    <div class="sup"><Photo photo={supervisor.photo} loading="lazy" /><div><h3>{supervisor.name}</h3><p class="role">{supervisor.supervisionArea}</p><p class="sup-meta">{supervisor.crp}</p><p class="sup-training">Especialização em:</p><ul>{supervisor.qualifications.map(q => <li><strong>{q}</strong></li>)}</ul></div></div>
   </div>
   <div class="model">
     <h3>Quem conduz as sessões</h3>

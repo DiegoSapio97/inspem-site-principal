@@ -1,16 +1,16 @@
 export const sexualidadePhotos = {
   hero: {
-    src: '/servicos/sexualidade/assets/sexualidade/hero.webp',
+    src: '/assets/tiago-hero.avif',
     alt: 'Homem de terno ao lado da identificação da clínica Perceptio.',
-    width: 1087,
-    height: 1447,
+    width: 960,
+    height: 1278,
     caption: 'Na clínica, no Bom Fim, em Porto Alegre.',
   },
   equipe: {
-    src: '/servicos/sexualidade/assets/tiago_alto_fc1b84.webp',
+    src: '/assets/equipe-inspem.avif',
     alt: 'Foto da equipe da clínica, com cinco pessoas reunidas.',
-    width: 1391,
-    height: 1131,
-    caption: 'Equipe da clínica.',
+    width: 686,
+    height: 558,
+    caption: 'Equipe INSPEM',
   },
 };

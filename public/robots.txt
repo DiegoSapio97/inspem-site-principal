@@ -1,0 +1,6 @@
+# INSPEM - https://inspem.com.br/
+# Rastreamento permitido para as paginas publicas e seus recursos.
+User-agent: *
+Allow: /
+
+Sitemap: https://inspem.com.br/sitemap.xml

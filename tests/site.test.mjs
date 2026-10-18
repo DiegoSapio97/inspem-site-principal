@@ -18,7 +18,7 @@ test('places the clinic photo immediately after the opening section', () => {
   const main = html.match(/<main[\s\S]*?<\/main>/)[0];
   const sections = [...main.matchAll(/<section[^>]*class="([^"]+)"/g)].map((m) => m[1]);
   assert.deepEqual(sections.slice(0, 3), ['hero', 'about-section', 'services-section']);
-  assert.equal((main.match(/tiago_alto_fc1b84\.webp/g) || []).length, 1);
+  assert.equal((main.match(/equipe-inspem\.avif/g) || []).length, 1);
 });
 
 test('explains evidence-based practice and CBT with institutional references', () => {
@@ -32,7 +32,7 @@ test('explains evidence-based practice and CBT with institutional references', (
   assert.match(html, /href="https:\/\/beckinstitute.org\/about\/understanding-cbt\/"/);
 });
 
-test('defines the five service destinations', async () => {
+test('defines the six service destinations', async () => {
   assert.ok(existsSync(siteDataUrl), 'src/data/site.mjs must exist');
 
   const { services } = await import(siteDataUrl.href);
@@ -47,6 +47,7 @@ test('defines the five service destinations', async () => {
         href: '/avaliacao-neuropsicologica',
       },
       { title: 'Sexualidade', href: '/sexualidade' },
+      { title: 'Vício em apostas', href: '/apostas' },
     ],
   );
   assert.equal(new Set(services.map(({ href }) => href)).size, services.length);

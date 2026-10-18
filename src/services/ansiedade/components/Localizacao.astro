@@ -1,5 +1,6 @@
 ---
 import ExternalMapLink from '../../../components/ExternalMapLink.astro';
+import ConsultationRooms from '../../../components/ConsultationRooms.astro';
 import { siteConfig } from '../data/siteConfig';
 import Photo from './Photo.astro';
 import { galleryHero, galleryRooms } from '../data/photos';
@@ -74,9 +75,10 @@ const accessCards = [
     <Photo photo={galleryHero} loading="lazy" />
     <figcaption>{galleryHero.caption}</figcaption>
   </figure>
-  <div class="gallery-strip" role="region" aria-roledescription="carrossel" aria-label="Fotos das salas">
+  <ConsultationRooms />
+  <div class="gallery-strip" role="region" aria-roledescription="carrossel" aria-label="Sala de espera e entrada">
     <div class="gallery-toolbar">
-      <p class="gallery-hint">Deslize para o lado para ver as salas</p>
+      <p class="gallery-hint">Deslize para ver a sala de espera e a entrada</p>
       <div class="gallery-nav">
         <button type="button" class="gallery-nav-btn" data-dir="-1" aria-label="Foto anterior">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg>
