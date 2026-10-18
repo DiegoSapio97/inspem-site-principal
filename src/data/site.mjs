@@ -47,6 +47,14 @@ export const services = [
     href: '/apostas',
     linkLabel: 'Conhecer o atendimento para problemas com apostas',
   },
+  {
+    number: '07',
+    title: 'Dependência química',
+    description:
+      'Psicoterapia para adultos com dificuldades relacionadas ao uso de álcool e outras drogas, on-line e presencial.',
+    href: '/dependencia-quimica',
+    linkLabel: 'Conhecer o atendimento para dependência química',
+  },
 ];
 
 export const contact = {

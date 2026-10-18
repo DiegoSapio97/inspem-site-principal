@@ -32,7 +32,7 @@ test('explains evidence-based practice and CBT with institutional references', (
   assert.match(html, /href="https:\/\/beckinstitute.org\/about\/understanding-cbt\/"/);
 });
 
-test('defines the six service destinations', async () => {
+test('defines the seven service destinations', async () => {
   assert.ok(existsSync(siteDataUrl), 'src/data/site.mjs must exist');
 
   const { services } = await import(siteDataUrl.href);
@@ -48,6 +48,7 @@ test('defines the six service destinations', async () => {
       },
       { title: 'Sexualidade', href: '/sexualidade' },
       { title: 'Vício em apostas', href: '/apostas' },
+      { title: 'Dependência química', href: '/dependencia-quimica' },
     ],
   );
   assert.equal(new Set(services.map(({ href }) => href)).size, services.length);

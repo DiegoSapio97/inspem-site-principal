@@ -6,7 +6,7 @@ Endereço: Av. Osvaldo Aranha, 1022, sala 1610, Bom Fim, Porto Alegre, RS, CEP 9
 
 Este é um mapa das páginas públicas do site. Os links apontam para páginas HTML e suas seções. Consulte a página do serviço para conferir público atendido, modalidade, equipe, valores, etapas e perguntas frequentes. As informações vigentes nas páginas são a referência; confirme disponibilidade e condições com a equipe.
 
-O contato inicial acontece pelo WhatsApp informado no site. Solicitar informações ou triagem não equivale a ter uma consulta agendada: a equipe verifica a demanda e combina o horário. Os atendimentos apresentados são presenciais. O conteúdo do site é informativo e não constitui diagnóstico ou atendimento psicológico. O WhatsApp da clínica não é um canal de emergência.
+O contato inicial acontece pelo WhatsApp informado no site. Solicitar informações ou triagem não equivale a ter uma consulta agendada: a equipe verifica a demanda e combina o horário. Consulte a página de cada serviço para conferir as modalidades presencial e on-line disponíveis. O conteúdo do site é informativo e não constitui diagnóstico ou atendimento psicológico. O WhatsApp da clínica não é um canal de emergência.
 
 ## Clínica e serviços
 
@@ -17,9 +17,11 @@ O contato inicial acontece pelo WhatsApp informado no site. Solicitar informaç�
 - [Avaliação neuropsicológica](https://inspem.com.br/avaliacao-neuropsicologica/): Avaliação presencial para diferentes idades; investigação do funcionamento cognitivo, emocional e comportamental, etapas, supervisão, devolutiva e laudo.
 - [Sexualidade e relacionamentos](https://inspem.com.br/sexualidade/): Psicoterapia presencial individual e de casal; desempenho e sexualidade, relacionamentos e intimidade, vivências LGBT+ e masculinidades. Embora o conteúdo tenha foco principal nas experiências masculinas, o atendimento não é exclusivo para homens.
 
+- [Dependência química](https://inspem.com.br/dependencia-quimica/): Psicoterapia para adultos com dificuldades relacionadas ao uso de álcool e outras drogas, on-line e presencial em Porto Alegre. Triagem para avaliar adequação do atendimento; não é serviço de emergência, internação ou desintoxicação.
+
 ## Navegação por tarefa
 
-- [Conhecer os serviços disponíveis](https://inspem.com.br/#servicos): Comparar os cinco serviços e acessar suas páginas.
+- [Conhecer os serviços disponíveis](https://inspem.com.br/#servicos): Comparar os serviços e acessar suas páginas.
 - [Entender como iniciar a psicoterapia](https://inspem.com.br/ansiedade/#como-comecar): Contato, conversa inicial e combinação da primeira sessão.
 - [Entender as etapas da avaliação neuropsicológica](https://inspem.com.br/avaliacao-neuropsicologica/#processo): Entrevista, testes e apresentação dos resultados.
 - [Consultar o atendimento individual ou de casal](https://inspem.com.br/sexualidade/#faq): Perguntas frequentes sobre público, modalidade e sessões.

@@ -1,0 +1,118 @@
+---
+import Layout from '../services/dependencia-quimica/layouts/Layout.astro';
+import Header from '../services/ansiedade/components/Header.astro';
+import Footer from '../services/ansiedade/components/Footer.astro';
+import Equipe from '../services/ansiedade/components/Equipe.astro';
+import Investimento from '../services/ansiedade/components/Investimento.astro';
+import Localizacao from '../services/ansiedade/components/Localizacao.astro';
+import Photo from '../services/ansiedade/components/Photo.astro';
+import WhatsAppButton from '../services/ansiedade/components/WhatsAppButton.astro';
+import ServiceNavigation from '../components/ServiceNavigation.astro';
+import { photos } from '../services/ansiedade/data/photos';
+
+const scenes = [
+  { title: 'Você usa mais do que pretendia', desc: 'Você tenta diminuir ou parar, mas acaba consumindo mais ou por mais tempo do que havia planejado.', path: 'M20 7v5h-5M4 17v-5h5M6 7a7 7 0 0 1 12-1l2 6M4 12l2 6a7 7 0 0 0 12-1' },
+  { title: 'A vontade de usar fica difícil de controlar', desc: 'Você sente uma vontade intensa de consumir, chamada fissura. Certos lugares, pessoas ou emoções podem despertar essa vontade.', path: 'M12 3a9 9 0 1 0 9 9M12 7a5 5 0 1 0 5 5M12 12l8-8M16 4h4v4' },
+  { title: 'O consumo ocupa cada vez mais a sua rotina', desc: 'Você deixa atividades e compromissos de lado. O tempo para usar a substância ou se recuperar dos efeitos prejudica outras áreas da sua vida.', path: 'M8 3v4M16 3v4M4 10h16M4 5h16v16H4V5M8 14h3M8 18h7' },
+  { title: 'Você continua usando apesar dos prejuízos', desc: 'Você percebe problemas na saúde, no trabalho ou nos relacionamentos, mas encontra dificuldade para mudar o consumo.', path: 'M12 21s-8-4.8-8-11a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c0 6.2-8 11-8 11M12 8v5M12 16h.01' }
+];
+const steps = [
+  { title: 'Você chama no WhatsApp', desc: 'Envie uma mensagem dizendo que procura atendimento para dificuldades com álcool ou outras drogas.' },
+  { title: 'A equipe entende sua demanda', desc: 'A equipe conversa sobre suas necessidades, explica o serviço e avalia se esse atendimento é adequado ao seu momento.' },
+  { title: 'Você combina os próximos passos', desc: 'Se o serviço for adequado ao seu caso, a equipe combina a primeira sessão. Quando necessário, outros serviços de saúde precisam participar do cuidado.' }
+];
+const faqs = [
+  { question: 'O que é dependência química?', answer: 'É um termo usado para descrever dificuldades persistentes relacionadas ao uso de álcool e outras drogas, como perder o controle do consumo e continuar usando apesar dos prejuízos. Os profissionais também usam o termo transtorno por uso de substâncias. A avaliação considera o conjunto de sinais e o impacto na vida da pessoa, não apenas a quantidade consumida.' },
+  { question: 'Preciso ter um diagnóstico ou já ter parado de usar?', answer: 'Não. Você pode procurar uma avaliação mesmo sem diagnóstico ou ainda tendo dúvidas sobre mudar. A triagem ajuda a entender suas necessidades e a verificar se o atendimento psicológico da clínica é adequado ao seu momento.' },
+  { question: 'Posso parar de beber de uma vez?', answer: 'Se você bebe muito há bastante tempo ou já teve sintomas ao reduzir o consumo, procure avaliação médica antes de tentar parar por conta própria. A abstinência de álcool pode ser grave e precisa de cuidado específico. Em caso de convulsões, confusão intensa ou risco imediato, procure uma emergência ou ligue para o SAMU (192). Não espere uma resposta pelo WhatsApp da clínica.' },
+  { question: 'A psicoterapia substitui o acompanhamento médico?', answer: 'Não. Algumas pessoas precisam de medicamentos, manejo da abstinência ou outros cuidados de saúde, além da psicoterapia. A necessidade depende da substância, dos riscos e da avaliação individual. Esta página apresenta atendimento psicológico, não um serviço de internação ou desintoxicação.' },
+  { question: 'E se eu voltar a usar durante o tratamento?', answer: 'Voltar a usar não significa que você perdeu tudo o que construiu. Esse retorno precisa ser avaliado para rever o plano de cuidado e os riscos envolvidos. Após um período sem uso, a tolerância pode diminuir e o risco de overdose pode aumentar. Procure apoio profissional para definir os próximos passos.' },
+  { question: 'A família pode procurar orientação?', answer: 'Um familiar pode entrar em contato para perguntar sobre o serviço e os caminhos para buscar cuidado. A possibilidade de participação no acompanhamento depende da avaliação e deve respeitar o consentimento da pessoa e as regras de sigilo profissional.' },
+  { question: 'Como funciona o atendimento e quanto custa?', answer: 'O atendimento é para adultos, on-line ou presencial em Porto Alegre. As sessões são semanais, duram 50 minutos e custam R$ 95. Os atendimentos são realizados por estagiários de Psicologia com supervisão clínica semanal. A triagem verifica se esse formato atende às suas necessidades.' },
+  { question: 'O atendimento é sigiloso?', answer: 'O atendimento segue as regras éticas de sigilo profissional. No início do acompanhamento, a equipe explica como as informações são tratadas, como funciona a supervisão e quais são os limites do sigilo.' },
+  { question: 'Quanto tempo dura o acompanhamento?', answer: 'A duração depende das suas necessidades e da avaliação ao longo do processo. Você e o terapeuta revisam os objetivos e as estratégias durante o acompanhamento. Não há um prazo único nem uma garantia de resultado.' },
+  { id: 'faq-plano-saude', className: 'faq-question-card', name: 'faq-servicos', question: 'A clínica atende por plano de saúde?', answer: 'Não. Os atendimentos são particulares. Alguns planos oferecem reembolso integral ou parcial para atendimentos realizados fora da rede credenciada. Consulte sua operadora antes de agendar para confirmar as regras, o valor do reembolso e os documentos necessários. Emitimos nota fiscal para a solicitação.' },
+  { id: 'faq-imposto-renda', className: 'faq-question-card', name: 'faq-servicos', question: 'O atendimento pode ser deduzido no Imposto de Renda?', answer: 'Despesas com psicólogo podem ser declaradas como despesas médicas, conforme as regras da Receita Federal. Se houver reembolso do plano, somente a parte não reembolsada pode ser dedutível. A redução efetiva do imposto depende da situação tributária de cada pessoa. Guarde a nota fiscal e, quando houver, o comprovante de reembolso.' }
+];
+---
+<Layout>
+  <Header /><ServiceNavigation current="dependencia-quimica" />
+  <main>
+    <div class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Psicoterapia para adultos · On-line e presencial em Porto Alegre</p>
+        <h1>A dependência química controla a sua vida? <em>Você pode retomar o controle da sua vida e fazer ela valer a pena.</em></h1>
+        <p class="sub">O uso de álcool e outras drogas está prejudicando sua vida? Converse com a INSPEM sobre suas dificuldades e possibilidades de cuidado.</p>
+        <div class="cta-row"><WhatsAppButton text="Quero conversar sobre meu atendimento" showIcon={false} /></div>
+        <p class="note">Atendimento por estagiários de Psicologia, com supervisão clínica semanal. <a href="#equipe">Conheça a equipe e os registros no CRP.</a></p>
+      </div>
+      <figure class="hero-photo"><Photo photo={photos.hero} /><figcaption>{photos.hero.caption}</figcaption></figure>
+    </div>
+    <section id="para-quem" class="section">
+      <p class="eyebrow">Para quem é</p>
+      <h2>Você reconhece alguma destas situações <em>na sua vida?</em></h2>
+      <div class="scenes">{scenes.map(scene => <div class="scene"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d={scene.path} /></svg></span><div><h3>{scene.title}</h3><p>{scene.desc}</p></div></div>)}</div>
+      <div class="hope"><p>Você não precisa esperar que os prejuízos aumentem <em>para procurar uma avaliação.</em></p></div>
+      <div class="closing"><p>Esses sinais ajudam a reconhecer dificuldades, mas não estabelecem um diagnóstico.</p><p>O cuidado considera sua saúde, sua rotina e suas relações, não apenas o consumo.</p></div>
+    </section>
+    <section id="como-funciona" class="section">
+      <p class="eyebrow">Método e acompanhamento</p>
+      <h2>A terapia ajuda você a entender <em>sua relação com o consumo.</em></h2>
+      <p class="intro">Você e o terapeuta investigam o que favorece o uso, quais prejuízos você percebe e o que deseja mudar. O plano considera suas necessidades, seus riscos e sua rede de apoio.</p>
+      <div class="schedule">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="2.5" /><path d="M3.5 10h17M8 2.8V6.2M16 2.8V6.2" /><circle cx="12" cy="15.5" r="3.2" /><path d="M12 13.6v1.9l1.3.8" /></svg>
+        <div class="s-item"><span class="s-big">Semanal</span><span class="s-small">um encontro por semana</span></div>
+        <div class="s-sep" aria-hidden="true"></div>
+        <div class="s-item"><span class="s-big">50 minutos</span><span class="s-small">por sessão</span></div>
+      </div>
+      <div class="facts">
+        <p class="facts-label">Na prática</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1" /></svg>Você identifica situações, pensamentos e emoções que aumentam a vontade de usar.</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2" /><path d="M9 9.5l2 2 4-4M9 16.5h6" /></svg>Você desenvolve estratégias para lidar com a fissura, reduzir riscos e retomar atividades importantes.</li>
+        </ul>
+      </div>
+      <div class="evidence">
+        <p class="e-label">Terapia Cognitivo-Comportamental — TCC</p>
+        <p class="e-title">Você pode aprender a lidar com a vontade de usar.</p>
+        <div class="e-stats"><div>
+          <p>Na terapia, você aprende a reconhecer os pensamentos, as emoções e as situações que aumentam sua vontade de consumir álcool ou outras drogas. Com o terapeuta, você desenvolve e pratica estratégias para atravessar esses momentos e fazer escolhas que protejam sua saúde.</p>
+          <p><strong>O objetivo é ajudar você a recuperar espaço para o que importa.</strong></p>
+          <p>Isso envolve aprender a enfrentar o estresse, lidar com a vontade intensa de usar — chamada fissura — e se preparar para situações de risco. O cuidado também busca ajudar você a retomar atividades, relações e planos que o consumo deixou em segundo plano.</p>
+        </div></div>
+      </div>
+      <p class="closing">A psicoterapia pode fazer parte de um cuidado mais amplo. Alguns casos precisam também de avaliação médica, medicamentos ou acompanhamento em serviços especializados.</p>
+    </section>
+    <section id="como-comecar" class="section">
+      <p class="eyebrow">Como começar</p><h2>Você pode começar <em>com uma conversa.</em></h2>
+      <p class="lead">Você não precisa ter todas as respostas nem saber como explicar tudo. O primeiro contato serve para entender sua demanda e orientar os próximos passos.</p>
+      <div class="steps">{steps.map((step, i) => <div class="step"><span class="n">{i + 1}</span><h3>{step.title}</h3><p>{step.desc}</p></div>)}</div>
+      <div class="cta-wrap"><WhatsAppButton text="Quero solicitar uma triagem" /></div>
+    </section>
+    <Investimento /><Equipe />
+    <section id="reconhecimento" class="section substance-references">
+      <p class="eyebrow">Cuidado baseado em evidências</p>
+      <h2>O tratamento considera <em>mais do que a substância.</em></h2>
+      <p class="lead">A escolha do cuidado depende do tipo de substância, dos prejuízos e das necessidades de cada pessoa. Quando existem outros problemas de saúde mental, eles também precisam ser avaliados e tratados de forma coordenada.</p>
+      <div class="closing"><p>Este conteúdo foi elaborado com base em materiais educativos do <a href="https://www.camh.ca/en/health-info/mental-illness-and-addiction-index/addiction" target="_blank" rel="noopener">CAMH</a>, do <a href="https://nida.nih.gov/publications/drugs-brains-behavior-science-addiction/treatment-recovery" target="_blank" rel="noopener">NIDA</a>, do <a href="https://www.nimh.nih.gov/health/topics/substance-use-and-mental-health" target="_blank" rel="noopener">NIMH</a> e do <a href="https://www.niaaa.nih.gov/publications/brochures-and-fact-sheets/understanding-alcohol-use-disorder" target="_blank" rel="noopener">NIAAA</a>. As informações não substituem uma avaliação profissional.</p></div>
+    </section>
+    <Localizacao />
+    <section id="faq"><div class="wrap">
+      <p class="eyebrow">Dúvidas frequentes</p><h2>Entenda o cuidado <em>antes de começar.</em></h2>
+      <p class="faq-lead">Converse com a equipe se a sua dúvida não estiver aqui.</p>
+      <div class="faq">{faqs.map(faq => <details id={faq.id} class={faq.className} name={faq.name}><summary>{faq.question}<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" /></svg></summary><div class="answer"><p>{faq.answer}</p></div></details>)}</div>
+    </div></section>
+    <section id="comece"><div class="wrap"><div class="cta">
+      <h2>Você pode dar o primeiro passo <em>sem ter tudo resolvido.</em></h2>
+      <p class="sub">Entre em contato para solicitar uma triagem e entender se o atendimento é adequado ao seu momento.</p>
+      <WhatsAppButton text="Quero conversar com a equipe" target="_blank" rel="noopener" />
+      <p class="micro">Este canal é destinado a informações e agendamento, não a emergências. Em caso de suspeita de overdose, convulsões, confusão intensa ou risco imediato à vida, ligue para o SAMU (192) ou procure um pronto-socorro.</p>
+    </div></div></section>
+  </main>
+  <Footer />
+</Layout>
+
+<style is:global>
+  .substance-references a { color: var(--accent); text-underline-offset: 3px; }
+  .substance-references a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+</style>

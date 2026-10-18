@@ -1,0 +1,31 @@
+---
+import GoogleTagManagerHead from '../../../components/GoogleTagManagerHead.astro';
+import GoogleTagManagerBody from '../../../components/GoogleTagManagerBody.astro';
+import { photos } from '../../ansiedade/data/photos';
+import newsreaderLatin from '@fontsource/newsreader/files/newsreader-latin-500-normal.woff2?url';
+import newsreaderItalic from '@fontsource/newsreader/files/newsreader-latin-500-italic.woff2?url';
+import '../../ansiedade/styles/fonts.css';
+import '../../ansiedade/styles/global.css';
+import '../../ansiedade/styles/refinements.css';
+import '../../ansiedade/styles/device-mobile.css';
+import '../../integration.css';
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <GoogleTagManagerHead />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dependência química: atendimento psicológico | INSPEM</title>
+    <link rel="canonical" href={new URL('/dependencia-quimica/', Astro.site)} />
+    <meta name="description" content="Psicoterapia para adultos com dificuldades relacionadas ao uso de álcool e outras drogas. Atendimento on-line e presencial em Porto Alegre, na INSPEM." />
+    <link rel="icon" href={photos.logo.src} type="image/webp" />
+    <link rel="preload" href={newsreaderLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={newsreaderItalic} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={photos.hero.src} as="image" type="image/avif" media="(min-width: 861px)" fetchpriority="high" />
+  </head>
+  <body id="top">
+    <GoogleTagManagerBody />
+    <slot />
+  </body>
+</html>
